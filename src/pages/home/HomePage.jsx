@@ -8,7 +8,7 @@ export default function HomePage() {
 
   const timer = useEffect(() => {
     setTimeout(() => {
-      navigate('/select')
+      navigate('/select/date')
     }, 3000)
 
     return () => clearTimeout(timer)
