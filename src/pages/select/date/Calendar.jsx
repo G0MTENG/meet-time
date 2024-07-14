@@ -1,26 +1,22 @@
-import { useState } from 'react'
 import ReactCalendar from 'react-calendar'
 import '@/styles/select/Calendar.css'
 import dayjs from 'dayjs'
+import useTimeStore from '@/stores/timeStore'
 
 export default function Calendar() {
-  const [selectedDates, setSelectedDates] = useState([])
+  const { dates, selectDate } = useTimeStore(state => ({
+    dates: state.dates,
+    selectDate: state.selectDate,
+  }))
 
   const handleDayClick = date => {
-    const dateString = date.toDateString()
-    if (selectedDates.some(d => d.toDateString() === dateString)) {
-      setSelectedDates(
-        selectedDates.filter(d => d.toDateString() !== dateString),
-      )
-    } else {
-      setSelectedDates([...selectedDates, date])
-    }
+    selectDate(date)
   }
 
   const tileClassName = ({ date, view }) => {
     if (view === 'month') {
       const dateString = date.toDateString()
-      if (selectedDates.some(d => d.toDateString() === dateString)) {
+      if (dates.some(d => d.toDateString() === dateString)) {
         return 'react-calendar__tile--highlight'
       }
     }

@@ -22,7 +22,7 @@ export default function SelectNavBar() {
   }
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <nav className={styles.container}>
         <div
           onClick={handleDate}
@@ -37,6 +37,7 @@ export default function SelectNavBar() {
           주간
         </div>
       </nav>
-    </>
+      <hr className={styles.hr} />
+    </div>
   )
 }
