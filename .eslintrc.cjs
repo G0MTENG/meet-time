@@ -15,5 +15,6 @@ module.exports = {
     'prettier/prettier': 'error',
     'react/jsx-no-target-blank': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
   },
 };

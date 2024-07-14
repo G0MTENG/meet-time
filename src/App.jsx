@@ -9,7 +9,7 @@ export default function App() {
     <div className={styles.layout}>
       <Routes>
         <Route index element={<HomePage />}></Route>
-        <Route path="select" element={<SelectPage />}></Route>
+        <Route path="select/*" element={<SelectPage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
       </Routes>
     </div>
