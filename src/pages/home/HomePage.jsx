@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom'
 export default function HomePage() {
   const navigate = useNavigate()
 
-  const timer = useEffect(() => {
-    setTimeout(() => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
       navigate('/select/date')
     }, 3000)
 

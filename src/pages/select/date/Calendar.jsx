@@ -28,21 +28,16 @@ export default function Calendar() {
   }
 
   return (
-    <>
-      <h1>
-        선택한 날짜: {selectedDates.map(date => date.toDateString()).join(', ')}
-      </h1>
-      <ReactCalendar
-        onClickDay={handleDayClick}
-        tileClassName={tileClassName}
-        prev2Label={null}
-        next2Label={null}
-        minDetail="year"
-        calendarType="gregory"
-        showNeighboringMonth={false}
-        formatMonthYear={(_, date) => dayjs(date).format('YYYY. MM')}
-        formatDay={(_, date) => dayjs(date).date()}
-      />
-    </>
+    <ReactCalendar
+      onClickDay={handleDayClick}
+      tileClassName={tileClassName}
+      prev2Label={null}
+      next2Label={null}
+      minDetail="year"
+      calendarType="gregory"
+      showNeighboringMonth={false}
+      formatMonthYear={(_, date) => dayjs(date).format('YYYY. MM')}
+      formatDay={(_, date) => dayjs(date).date()}
+    />
   )
 }

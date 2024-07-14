@@ -1,0 +1,13 @@
+.groupInput {
+  width: 100%;
+  height: 7%;
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px;
+  border-width: 0;
+}
+
+.groupInput:focus {
+  outline: 1px solid #000;
+  border-radius: 10px;
+}
