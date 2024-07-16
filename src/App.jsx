@@ -3,6 +3,7 @@ import styles from '@/styles/App.module.css'
 import HomePage from '@/pages/home/HomePage'
 import LoginPage from '@/pages/login/LoginPage'
 import SelectPage from '@/pages/select/SelectPage'
+import TimeSelectPage from './pages/timeSelect/timeSelectPage'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Route index element={<HomePage />}></Route>
         <Route path="select/*" element={<SelectPage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
+        <Route path="timeSelect" element={<TimeSelectPage />}></Route>
       </Routes>
     </div>
   )
