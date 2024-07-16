@@ -13,7 +13,13 @@ export default function TimeSelectPage() {
         <Route path="/date" element={<TimeSelectDate />} />
         <Route path="/date" element={<TimeSelectWeek />} />
       </Routes>
-      <Button />
+      <Button
+        handleClick={() => {
+          console.log('선택완료')
+        }}
+      >
+        선택완료
+      </Button>
     </div>
   )
 }

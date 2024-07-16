@@ -6,9 +6,11 @@ import GroupNameInput from '@/components/GroupNameInput'
 import SelectNavBar from '@/components/SelectNavBar'
 import Button from '@/components/Button'
 import Calendar from './date/Calendar'
-import { handleGroupCreate } from '@/hooks/Button/handleGroupCreate'
+import useGroupCreate from '@/hooks/Button/handleGroupCreate'
 
 export default function SelectPage() {
+  const handleClick = useGroupCreate()
+
   return (
     <div className={styles.layout}>
       <div className={styles.imageWrapper}>
@@ -22,7 +24,7 @@ export default function SelectPage() {
           <Route path="week" element={<WeekSelectPage />} />
         </Routes>
       </div>
-      <Button handleClick={handleGroupCreate}>선택 완료</Button>
+      <Button handleClick={handleClick}>선택 완료</Button>
     </div>
   )
 }

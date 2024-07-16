@@ -1,23 +1,25 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import useGroupNameStore from '@/stores/groupNameStore'
 
-const groupName = useGroupNameStore()
-const navigate = useNavigate()
-const path = useLocation()
+export default function useGroupCreate() {
+  const groupName = useGroupNameStore()
+  const navigate = useNavigate()
+  const path = useLocation()
 
-const handleGroupCreate = () => {
-  if (!groupName) {
-    return
+  const handleGroupCreate = () => {
+    if (!groupName) {
+      return
+    }
+
+    if (path === '/select') {
+      return
+    }
+
+    // 나중에 '/timeRange로' 이동하게 바꾸면 됨
+    path === '/select/date'
+      ? navigate('/timeSelect/week')
+      : navigate('/timeSelect/date')
   }
 
-  if (path === '/select') {
-    return
-  }
-
-  // 나중에 '/timeRange로' 이동하게 바꾸면 됨
-  path === '/select/date'
-    ? navigate('/timeSelect/week')
-    : navigate('/timeSelect/date')
+  return handleGroupCreate
 }
-
-export { handleGroupCreate }
