@@ -12,4 +12,4 @@ const pickDate = (state, date) => {
   }
 }
 
-export default pickDate
+export { pickDate }

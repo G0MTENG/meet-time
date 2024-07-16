@@ -7,7 +7,6 @@ export default function Calendar() {
   const { dates, selectDate } = useTimeStore()
 
   const handleDayClick = date => {
-    console.log(date)
     selectDate(date)
   }
 
