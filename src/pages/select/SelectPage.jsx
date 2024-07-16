@@ -27,7 +27,7 @@ export default function SelectPage() {
           <Route path="week" element={<WeekSelectPage />}></Route>
         </Routes>
       </div>
-      <Button>모임생성</Button>
+      <Button>선택 완료</Button>
     </div>
   )
 }
