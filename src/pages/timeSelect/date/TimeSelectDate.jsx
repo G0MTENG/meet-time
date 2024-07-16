@@ -1,5 +1,18 @@
-import React from 'react'
+import useTimeStore from '@/stores/timeStore'
+import { parseDate } from '@/utils/dateHelper'
 
 export default function TimeSelectDate() {
-  return <div>TimeSelectDate</div>
+  const { dates } = useTimeStore()
+  return (
+    <ul>
+      {dates.map((date, i) => {
+        const [monthNdate, day] = parseDate(date)
+        return (
+          <li key={i}>
+            {monthNdate} {day}
+          </li>
+        )
+      })}
+    </ul>
+  )
 }

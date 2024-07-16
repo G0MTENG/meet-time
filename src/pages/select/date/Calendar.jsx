@@ -4,12 +4,10 @@ import dayjs from 'dayjs'
 import useTimeStore from '@/stores/timeStore'
 
 export default function Calendar() {
-  const { dates, selectDate } = useTimeStore(state => ({
-    dates: state.dates,
-    selectDate: state.selectDate,
-  }))
+  const { dates, selectDate } = useTimeStore()
 
   const handleDayClick = date => {
+    console.log(date)
     selectDate(date)
   }
 
