@@ -1,12 +1,10 @@
-import { Route, Routes } from 'react-router-dom'
-import WeekSelectPage from './week/WeekSelectPage'
 import styles from '@/styles/select/SelectPage.module.css'
 import Logo from '@/components/Logo'
 import GroupNameInput from '@/components/GroupNameInput'
 import SelectNavBar from '@/components/SelectNavBar'
 import Button from '@/components/Button'
-import Calendar from './date/Calendar'
 import useGroupCreate from '@/hooks/Button/handleGroupCreate'
+import SelectRoutes from '@/routes/SelectRoutes'
 
 export default function SelectPage() {
   const handleClick = useGroupCreate()
@@ -19,10 +17,7 @@ export default function SelectPage() {
       <GroupNameInput />
       <SelectNavBar />
       <div className={styles.routes}>
-        <Routes>
-          <Route path="date" element={<Calendar />} />
-          <Route path="week" element={<WeekSelectPage />} />
-        </Routes>
+        <SelectRoutes />
       </div>
       <Button handleClick={handleClick}>선택 완료</Button>
     </div>

@@ -22,6 +22,7 @@
 
 /* navigation */
 .react-calendar__navigation__label {
+  color: black;
   order: -1;
   text-align: left;
   font-size: 1rem;
@@ -46,6 +47,7 @@
 }
 
 .react-calendar__month-view__days__day {
+  color: black;
   aspect-ratio: 1 / 1;
 }
 
