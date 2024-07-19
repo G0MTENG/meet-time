@@ -3,14 +3,14 @@ import styles from '@/styles/components/SelectNavBar.module.css'
 
 export default function SelectNavBar() {
   const path = useLocation().pathname
-  const navigation = useNavigate()
+  const navigate = useNavigate()
 
   const handleDate = () => {
     if (path === '/select/date') {
       return
     }
 
-    navigation('/select/date')
+    navigate('/select/date')
   }
 
   const handleWeek = () => {
@@ -18,7 +18,7 @@ export default function SelectNavBar() {
       return
     }
 
-    navigation('/select/week')
+    navigate('/select/week')
   }
 
   return (

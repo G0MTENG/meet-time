@@ -3,6 +3,7 @@
   text-align: center;
   margin-left: 40%;
 }
+
 .inputname {
   border: none;
   outline: none;
@@ -10,9 +11,11 @@
   font-weight: bold;
   width: 50%;
 }
+
 ::placeholder {
   color: lightgrey;
 }
+
 .header {
   font-weight: bold;
   font-size: x-large;
@@ -21,13 +24,16 @@
   border-bottom: 1px solid lightgrey;
   margin: 30px;
 }
+
 .header:hover {
   border-bottom: 1px solid black;
 }
+
 .header > h1 {
   margin-bottom: 10px;
   cursor: pointer;
 }
+
 .container {
   margin: 5% 20%;
   display: flex;
@@ -35,17 +41,20 @@
   text-align: center;
   gap: 8px;
 }
+
 .container > div {
   border: 2px solid rgb(240, 240, 240);
   border-radius: 30px;
   padding: 10px;
   background-color: rgb(240, 240, 240);
 }
+
 .container > div:hover {
   background-color: black;
   color: white;
   cursor: pointer;
 }
+
 .button {
   background-color: black;
   color: white;

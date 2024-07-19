@@ -1,15 +1,23 @@
+import useGroupStore from '@/stores/groupStore'
 import styles from '@/styles/select/DateSelectPage.module.css'
+import DayBox from './DayBox'
 
 export default function SelectWeek() {
+  const week = ['월', '화', '수', '목', '금', '토', '일']
+  const { weeks, setWeeks } = useGroupStore()
+
   return (
     <div className={styles.container}>
-      <div>월요일</div>
-      <div>화요일</div>
-      <div>수요일</div>
-      <div>목요일</div>
-      <div>금요일</div>
-      <div>토요일</div>
-      <div>일요일</div>
+      {week.map((day, idx) => (
+        <DayBox
+          key={idx}
+          isClicked={weeks[idx]}
+          handleClick={setWeeks}
+          index={idx}
+        >
+          {day}
+        </DayBox>
+      ))}
     </div>
   )
 }
