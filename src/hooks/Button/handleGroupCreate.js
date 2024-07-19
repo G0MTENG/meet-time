@@ -1,26 +1,28 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import useGroupNameStore from '@/stores/groupNameStore'
+import useGroupStore from '@/stores/groupStore'
+import { GROUPTYPE } from '@/stores/groupStore'
 
 export default function useGroupCreate() {
-  const { setGroupName, inputName } = useGroupNameStore()
+  const { setGroupType, groupName, dates, weeks } = useGroupStore()
   const navigate = useNavigate()
   const path = useLocation()
 
   const handleGroupCreate = () => {
-    if (!inputName) {
+    if (!groupName || path === '/select') {
       return
     }
 
-    if (path === '/select') {
-      return
-    }
+    console.log('groupName: ', groupName)
+    console.log('dates: ', dates)
+    console.log('weeks: ', weeks)
 
-    setGroupName(inputName)
-
-    // 나중에 '/timeRange로' 이동하게 바꾸면 됨
     path === '/select/date'
-      ? navigate('/timeSelect/week')
-      : navigate('/timeSelect/date')
+      ? setGroupType(GROUPTYPE.WEEK)
+      : setGroupType(GROUPTYPE.DATE)
+
+    navigate('/time-range')
+
+    // fetch('URL', dates or weeks)
   }
 
   return handleGroupCreate

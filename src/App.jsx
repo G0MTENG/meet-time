@@ -13,8 +13,8 @@ export default function App() {
         <Route index element={<HomePage />}></Route>
         <Route path="select/*" element={<SelectPage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
-        <Route path="timeSelect/*" element={<TimeSelectPage />}></Route>
-        <Route path="timeRange" element={<TimeRangePage />}></Route>
+        <Route path="time-select/*" element={<TimeSelectPage />}></Route>
+        <Route path="time-range" element={<TimeRangePage />}></Route>
       </Routes>
     </div>
   )

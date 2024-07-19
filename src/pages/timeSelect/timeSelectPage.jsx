@@ -11,7 +11,7 @@ export default function TimeSelectPage() {
       <LogoBox />
       <Routes>
         <Route path="/date" element={<TimeSelectDate />} />
-        <Route path="/date" element={<TimeSelectWeek />} />
+        <Route path="/week" element={<TimeSelectWeek />} />
       </Routes>
       <Button
         handleClick={() => {

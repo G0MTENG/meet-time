@@ -1,8 +1,8 @@
-import useTimeStore from '@/stores/timeStore'
+import useGroupStore from '@/stores/groupStore'
 import { parseDate } from '@/utils/dateHelper'
 
 export default function TimeSelectDate() {
-  const { dates } = useTimeStore()
+  const { dates } = useGroupStore()
   return (
     <ul>
       {dates.map((date, i) => {

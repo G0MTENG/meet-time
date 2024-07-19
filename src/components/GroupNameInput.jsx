@@ -1,18 +1,18 @@
-import useGroupNameStore from '@/stores/groupNameStore'
+import useGroupStore from '@/stores/groupStore'
 import styles from '@/styles/components/GroupNameInput.module.css'
 
 export default function GroupNameInput() {
-  const { inputName, setInputName } = useGroupNameStore()
+  const { groupName, setGroupName } = useGroupStore()
 
   const handleChange = e => {
-    setInputName(e.target.value)
+    setGroupName(e.target.value)
   }
 
   return (
     <input
       className={styles.groupInput}
       type="text"
-      value={inputName}
+      value={groupName}
       onChange={handleChange}
       placeholder="모임이름"
     />

@@ -1,10 +1,10 @@
 import styles from '@/styles/timeSelect/LogoBox.module.css'
 import SelectLogo from './SelectLogo'
 import LinkCopy from '@/components/LinkCopy'
-import useGroupNameStore from '@/stores/groupNameStore'
+import useGroupStore from '@/stores/groupStore'
 
 export default function LogoBox() {
-  const { groupName } = useGroupNameStore()
+  const { groupName } = useGroupStore()
 
   return (
     <div className={styles.container}>

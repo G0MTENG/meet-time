@@ -1,13 +1,13 @@
 import ReactCalendar from 'react-calendar'
 import '@/styles/select/Calendar.css'
 import dayjs from 'dayjs'
-import useTimeStore from '@/stores/timeStore'
+import useGroupStore from '@/stores/groupStore'
 
 export default function Calendar() {
-  const { dates, selectDate } = useTimeStore()
+  const { dates, setDates } = useGroupStore()
 
   const handleDayClick = date => {
-    selectDate(date)
+    setDates(date)
   }
 
   const tileClassName = ({ date, view }) => {
