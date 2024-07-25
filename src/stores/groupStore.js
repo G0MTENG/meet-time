@@ -2,8 +2,8 @@ import { pickDate } from '@/utils/calendarHelper'
 import { create } from 'zustand'
 
 export const GROUPTYPE = {
-  DATE: 0,
-  WEEK: 1,
+  DATE: 'D',
+  WEEK: 'W',
 }
 
 const useGroupStore = create(set => ({
