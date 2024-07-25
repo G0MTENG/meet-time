@@ -131,7 +131,7 @@
 }
 
 /* hover */
-@media (min-width: 600px){
+@media (hover: hover) and (pointer: fine) {
   .react-calendar__tile:enabled:hover
   {
     background-color: #e6e6e6;
