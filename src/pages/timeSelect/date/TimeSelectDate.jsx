@@ -9,8 +9,7 @@ export default function TimeSelectDate() {
   const [times, setTimes] = useState(DUMMY[0].times)
 
   useEffect(() => {
-    const dateTimes = DUMMY[date].times
-    setTimes(...dateTimes)
+    setTimes(DUMMY[date].times)
   }, [date])
 
   const handleDateClick = idx => {
@@ -20,23 +19,24 @@ export default function TimeSelectDate() {
 
   const handleTimeClick = idx => {
     const copyTimes = [...times]
-    copyTimes[idx] === 0 ? 1 : 0
-    setTimes(...copyTimes)
+    copyTimes[idx] = copyTimes[idx] === 0 ? 1 : 0
+    setTimes(copyTimes)
   }
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.dateSelector}>
         {DUMMY.map((ele, idx) => {
+          const clicked = date === idx
           return (
             <div
               key={ele.id}
-              className={`${styles.dateContainer} ${date === idx ? styles.dateClick : ''}`}
+              className={`${styles.dateContainer} ${clicked ? styles.dateClick : ''}`}
               onClick={() => handleDateClick(idx)}
             >
               <h5>{ele.date}</h5>
               <p>{ele.day}</p>
-              <IoIosArrowForward />
+              {clicked && <IoIosArrowForward className={styles.icon} />}
             </div>
           )
         })}
@@ -47,7 +47,7 @@ export default function TimeSelectDate() {
             <div
               key={idx}
               className={`${styles.timeContainer} ${times[idx] === 1 ? styles.timeClick : ''}`}
-              onClick={handleTimeClick}
+              onClick={() => handleTimeClick(idx)}
             >
               <p>{label}</p>
               <div></div>

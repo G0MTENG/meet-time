@@ -6,16 +6,18 @@
 
 .logoBox {
   width: 50%;
-  max-width: 280px;
+  max-width: 180px;
 }
 
 .link {
   width: 12%;
   min-width: 100px;
   margin-left: auto;
+  max-height: 20px;
 }
 
 .group {
   margin: 0 auto;
   text-align: center;
+  font-size: 1.6rem;
 }

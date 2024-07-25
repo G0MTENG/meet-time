@@ -42,15 +42,16 @@
   flex-direction: column;
   margin: 2% auto;
   border-radius: 21px;
+  position: relative;
 }
 
 .dateContainer h5 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .dateContainer p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .dateClick {
@@ -77,7 +78,7 @@
 
 .timeContainer p {
   padding-top: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   flex: 3;
 }
 
@@ -88,4 +89,10 @@
 
 .timeClick div {
   background-color: #3C3A3A;
+}
+
+.icon {
+  position: absolute;
+  top: 45%;
+  right: 5%;
 }

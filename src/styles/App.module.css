@@ -1,6 +1,11 @@
 .layout {
+  overflow-y: auto;
   max-width: 648px;
   margin: 0 auto;
   height: 100vh;
   background-color: #fff;
+}
+
+.layout::-webkit-scrollbar {
+  display: none;
 }

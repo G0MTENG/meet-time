@@ -6,18 +6,6 @@ const DUMMY = [
     times: Array(14).fill(0),
   },
   {
-    id: 0,
-    date: '7월 22일',
-    day: '월요일',
-    times: Array(14).fill(0),
-  },
-  {
-    id: 0,
-    date: '7월 22일',
-    day: '월요일',
-    times: Array(14).fill(0),
-  },
-  {
     id: 1,
     date: '7월 23일',
     day: '화요일',
