@@ -1,6 +1,7 @@
 import styles from '@/styles/timeSelect/TimeSelectDate.module.css'
 import { DUMMY, createTimes } from '@/utils/dummy'
 import { useEffect, useState } from 'react'
+import { IoIosArrowForward } from 'react-icons/io'
 
 export default function TimeSelectDate() {
   const timeLabels = createTimes('9:00', '16:00')
@@ -35,6 +36,7 @@ export default function TimeSelectDate() {
             >
               <h5>{ele.date}</h5>
               <p>{ele.day}</p>
+              <IoIosArrowForward />
             </div>
           )
         })}
