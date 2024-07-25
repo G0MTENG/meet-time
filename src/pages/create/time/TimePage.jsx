@@ -2,8 +2,13 @@ import styles from '@/styles/create/TimeRange.module.css'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import useGroupStore from '@/stores/groupStore'
 
 export default function TimePage() {
+  const navigate = useNavigate()
+  const { groupName } = useGroupStore()
+
   const options = [
     { label: '0:00', value: '0:00' },
     { label: '0:30', value: '0:30' },
@@ -94,7 +99,9 @@ export default function TimePage() {
           ))}
         </select>
       </div>
-      <Button>모임 생성</Button>
+      <Button onClick={() => navigate(`/login?group=${groupName}`)}>
+        모임 생성
+      </Button>
     </div>
   )
 }
