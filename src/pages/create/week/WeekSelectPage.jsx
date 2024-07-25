@@ -1,5 +1,5 @@
 import useGroupStore from '@/stores/groupStore'
-import styles from '@/styles/select/DateSelectPage.module.css'
+import styles from '@/styles/create/DateSelectPage.module.css'
 import DayBox from './DayBox'
 
 export default function SelectWeek() {

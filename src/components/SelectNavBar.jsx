@@ -6,19 +6,19 @@ export default function SelectNavBar() {
   const navigate = useNavigate()
 
   const handleDate = () => {
-    if (path === '/select/date') {
+    if (path === '/create/date') {
       return
     }
 
-    navigate('/select/date')
+    navigate('/create/date')
   }
 
   const handleWeek = () => {
-    if (path === '/select/week') {
+    if (path === '/create/week') {
       return
     }
 
-    navigate('/select/week')
+    navigate('/create/week')
   }
 
   return (
@@ -26,13 +26,13 @@ export default function SelectNavBar() {
       <nav className={styles.container}>
         <div
           onClick={handleDate}
-          className={path === '/select/date' ? styles.active : undefined}
+          className={path === '/create/date' ? styles.active : undefined}
         >
           날짜
         </div>
         <div
           onClick={handleWeek}
-          className={path === '/select/week' ? styles.active : undefined}
+          className={path === '/create/week' ? styles.active : undefined}
         >
           주간
         </div>

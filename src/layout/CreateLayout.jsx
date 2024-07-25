@@ -1,12 +1,12 @@
-import styles from '@/styles/select/SelectPage.module.css'
+import styles from '@/styles/layout/CreateLayout.module.css'
 import Logo from '@/components/Logo'
 import GroupNameInput from '@/components/GroupNameInput'
 import SelectNavBar from '@/components/SelectNavBar'
 import Button from '@/components/Button'
 import useGroupCreate from '@/hooks/Button/handleGroupCreate'
-import SelectRoutes from '@/routes/SelectRoutes'
+import { Outlet } from 'react-router-dom'
 
-export default function SelectPage() {
+export default function CreateLayout() {
   const handleClick = useGroupCreate()
 
   return (
@@ -17,7 +17,7 @@ export default function SelectPage() {
       <GroupNameInput />
       <SelectNavBar />
       <div className={styles.routes}>
-        <SelectRoutes />
+        <Outlet />
       </div>
       <Button onClick={handleClick}>선택 완료</Button>
     </div>

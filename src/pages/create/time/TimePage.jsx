@@ -1,9 +1,9 @@
-import styles from '@/styles/select/TimeRange.module.css'
+import styles from '@/styles/create/TimeRange.module.css'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
 import { useState } from 'react'
 
-export default function timeRange() {
+export default function TimePage() {
   const options = [
     { label: '0:00', value: '0:00' },
     { label: '0:30', value: '0:30' },
@@ -73,8 +73,10 @@ export default function timeRange() {
           value={selectedValue}
           className={styles.input}
         >
-          {options.map(option => (
-            <option value={option.value}>{option.label}</option>
+          {options.map((option, idx) => (
+            <option key={idx} value={option.value}>
+              {option.label}
+            </option>
           ))}
         </select>
       </div>
@@ -85,8 +87,10 @@ export default function timeRange() {
           value={selectedValue}
           className={styles.input}
         >
-          {options.map(option => (
-            <option value={option.value}>{option.label}</option>
+          {options.map((option, idx) => (
+            <option key={idx} value={option.value}>
+              {option.label}
+            </option>
           ))}
         </select>
       </div>

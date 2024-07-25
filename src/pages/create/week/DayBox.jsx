@@ -1,4 +1,4 @@
-import styles from '@/styles/select/DayBox.module.css'
+import styles from '@/styles/create/DayBox.module.css'
 
 export default function DayBox({ children, isClicked, handleClick, index }) {
   return (

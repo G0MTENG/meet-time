@@ -1,5 +1,5 @@
 import ReactCalendar from 'react-calendar'
-import '@/styles/select/Calendar.css'
+import '@/styles/create/Calendar.css'
 import dayjs from 'dayjs'
 import useGroupStore from '@/stores/groupStore'
 

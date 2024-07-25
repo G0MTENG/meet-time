@@ -8,7 +8,7 @@ export default function useGroupCreate() {
   const path = useLocation()
 
   const handleGroupCreate = () => {
-    if (!groupName || path === '/select') {
+    if (!groupName || path === '/create') {
       return
     }
 
@@ -16,11 +16,11 @@ export default function useGroupCreate() {
     console.log('dates: ', dates)
     console.log('weeks: ', weeks)
 
-    path === '/select/date'
+    path === '/create/date'
       ? setGroupType(GROUPTYPE.WEEK)
       : setGroupType(GROUPTYPE.DATE)
 
-    navigate('/time-range')
+    navigate('/create/time')
 
     // fetch('URL', dates or weeks)
   }
