@@ -19,7 +19,7 @@ export default function SelectPage() {
       <div className={styles.routes}>
         <SelectRoutes />
       </div>
-      <Button handleClick={handleClick}>선택 완료</Button>
+      <Button onClick={handleClick}>선택 완료</Button>
     </div>
   )
 }

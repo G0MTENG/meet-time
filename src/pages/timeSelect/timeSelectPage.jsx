@@ -14,7 +14,7 @@ export default function TimeSelectPage() {
         <Route path="/week" element={<TimeSelectWeek />} />
       </Routes>
       <Button
-        handleClick={() => {
+        onClick={() => {
           console.log('선택완료')
         }}
       >

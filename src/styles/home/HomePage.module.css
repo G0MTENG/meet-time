@@ -3,10 +3,21 @@
   height: 100%;
   padding: 0 5.84%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10%;
 }
 
 .box {
   width: 100%;
+}
+
+.buttons {
+  width: 90%;
+  height: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
