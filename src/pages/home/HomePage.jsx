@@ -13,7 +13,7 @@ export default function HomePage() {
       </div>
       <div className={styles.buttons}>
         <Button onClick={() => navigate('/create/date')}>모임 생성</Button>
-        <Button onClick={() => navigate('/create/week')}>모임 입장</Button>
+        <Button onClick={() => navigate('/join')}>모임 입장</Button>
       </div>
     </div>
   )
