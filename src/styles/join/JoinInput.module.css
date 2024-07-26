@@ -1,0 +1,18 @@
+.button {
+  width: 85%;
+  height: 5%;
+  min-height: 44px;
+  border: 1.5px solid #000;
+  display: flex;
+}
+
+.button input {
+  flex: 1;
+  border: none;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.button input:focus {
+  outline: none;
+}

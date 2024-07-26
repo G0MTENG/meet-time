@@ -1,3 +1,4 @@
+import styles from '@/styles/join/JoinPage.module.css'
 import Button from '@/components/Button'
 import Logo from '@/components/Logo'
 import { useNavigate } from 'react-router-dom'
@@ -18,9 +19,11 @@ export default function JoinPage() {
   }
 
   return (
-    <div>
-      <Logo />
-      <div>모임이름과 Tag를 입력해주세요</div>
+    <div className={styles.layout}>
+      <div className={styles.logo}>
+        <Logo />
+      </div>
+      <p>모임이름과 Tag를 입력해주세요!</p>
       <JoinInput value={groupInput} set={setGroupInput} />
       <Button onClick={handleJoinClick}>모입 입장</Button>
     </div>

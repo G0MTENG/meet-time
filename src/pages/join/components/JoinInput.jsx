@@ -1,4 +1,5 @@
-import { FaPaste } from 'react-icons/fa6'
+import styles from '@/styles/join/JoinInput.module.css'
+import PasteIcon from './PasteIcon'
 
 export default function JoinInput({ value, set }) {
   const handleChange = e => {
@@ -6,14 +7,14 @@ export default function JoinInput({ value, set }) {
   }
 
   return (
-    <div>
+    <div className={styles.button}>
       <input
         type="text"
         value={value}
         onChange={handleChange}
         placeholder="헤커톤#12321"
       />
-      <FaPaste />
+      <PasteIcon />
     </div>
   )
 }
