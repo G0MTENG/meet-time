@@ -14,7 +14,7 @@ export default function JoinInput({ value, set }) {
         onChange={handleChange}
         placeholder="헤커톤#12321"
       />
-      <PasteIcon />
+      <PasteIcon set={set} />
     </div>
   )
 }
