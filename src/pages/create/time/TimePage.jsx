@@ -3,12 +3,10 @@ import TimeLabelContainer from './TimeLabelContainer'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
 import { useNavigate } from 'react-router-dom'
-import useGroupStore from '@/stores/groupStore'
 import useTime from '@/hooks/TimeSelect/useTime'
 
 export default function TimePage() {
   const navigate = useNavigate()
-  const { groupName } = useGroupStore()
   const {
     state: [start, end],
     label: [startOptions, endOptions],
@@ -31,9 +29,7 @@ export default function TimePage() {
         onChange={handleEndChange}
         options={endOptions}
       />
-      <Button onClick={() => navigate(`/login?group=${groupName}`)}>
-        모임 생성
-      </Button>
+      <Button onClick={() => navigate(`/login`)}>모임 생성</Button>
     </div>
   )
 }
