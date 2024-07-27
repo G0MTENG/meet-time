@@ -2,11 +2,11 @@ import styles from '@/styles/create/TimePage.module.css'
 import TimeLabelContainer from './TimeLabelContainer'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
-import { useNavigate } from 'react-router-dom'
 import useTime from '@/hooks/TimeSelect/useTime'
+import useGroupCreate from '@/hooks/Button/useGroupCreate'
 
 export default function TimePage() {
-  const navigate = useNavigate()
+  const create = useGroupCreate()
   const {
     state: [start, end],
     label: [startOptions, endOptions],
@@ -29,7 +29,7 @@ export default function TimePage() {
         onChange={handleEndChange}
         options={endOptions}
       />
-      <Button onClick={() => navigate(`/login`)}>모임 생성</Button>
+      <Button onClick={create}>모임 생성</Button>
     </div>
   )
 }
