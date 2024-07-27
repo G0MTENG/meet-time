@@ -4,6 +4,7 @@
   min-height: 44px;
   border: 1.5px solid #000;
   display: flex;
+  position: relative;
 }
 
 .button input {

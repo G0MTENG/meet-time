@@ -1,11 +1,12 @@
 .layout {
   width: 90%;
   margin: 0 auto;
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 5%;
 }
 
 .logo {
@@ -21,4 +22,11 @@
 
 .button {
   margin: 0 auto;
+}
+
+.error {
+  min-height: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: red;
 }
