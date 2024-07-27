@@ -16,6 +16,7 @@
   padding-left: 5%;
   height: 50px;
   font-weight: 400;
+  max-width: 500px;
 }
 .footer {
   color: red;
@@ -23,14 +24,6 @@
   font-weight: 500;
   height: 20px;
 }
-.loginbutton {
-  background-color: black;
-  color: white;
-  text-align: center;
-  margin: 5% 10%;
-  padding-top: 15px;
-  height: 50px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
+.button {
+  margin-left: 10%;
 }

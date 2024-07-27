@@ -10,26 +10,26 @@ export default function TimePage() {
   const { groupName } = useGroupStore()
 
   const options = [
-    { label: '0:00', value: '0:00' },
-    { label: '0:30', value: '0:30' },
-    { label: '1:00', value: '1:00' },
-    { label: '1:30', value: '1:30' },
-    { label: '2:00', value: '2:00' },
-    { label: '2:30', value: '2:30' },
-    { label: '3:00', value: '3:00' },
-    { label: '3:30', value: '3:30' },
-    { label: '4:00', value: '4:00' },
-    { label: '4:30', value: '4:30' },
-    { label: '5:00', value: '5:00' },
-    { label: '5:30', value: '5:30' },
-    { label: '6:00', value: '6:00' },
-    { label: '6:30', value: '6:30' },
-    { label: '7:00', value: '7:00' },
-    { label: '7:30', value: '7:30' },
-    { label: '8:00', value: '8:00' },
-    { label: '8:30', value: '8:30' },
-    { label: '9:00', value: '9:00' },
-    { label: '9:30', value: '9:30' },
+    { label: '00:00', value: '00:00' },
+    { label: '00:30', value: '00:30' },
+    { label: '01:00', value: '01:00' },
+    { label: '01:30', value: '01:30' },
+    { label: '02:00', value: '02:00' },
+    { label: '02:30', value: '02:30' },
+    { label: '03:00', value: '03:00' },
+    { label: '03:30', value: '03:30' },
+    { label: '04:00', value: '04:00' },
+    { label: '04:30', value: '04:30' },
+    { label: '05:00', value: '05:00' },
+    { label: '05:30', value: '05:30' },
+    { label: '06:00', value: '06:00' },
+    { label: '06:30', value: '06:30' },
+    { label: '07:00', value: '07:00' },
+    { label: '07:30', value: '07:30' },
+    { label: '08:00', value: '08:00' },
+    { label: '08:30', value: '08:30' },
+    { label: '09:00', value: '09:00' },
+    { label: '09:30', value: '09:30' },
     { label: '10:00', value: '10:00' },
     { label: '10:30', value: '10:30' },
     { label: '11:00', value: '11:00' },
@@ -89,7 +89,7 @@ export default function TimePage() {
         <p className={styles.label}>종료 시간</p>
         <select
           onChange={handleChange}
-          value={selectedValue}
+          // value={selectedValue}
           className={styles.input}
         >
           {options.map((option, idx) => (

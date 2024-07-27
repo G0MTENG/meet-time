@@ -13,7 +13,9 @@ export default function LoginPage() {
       <p className={styles.first_label}>LOGIN</p>
       <IdInput />
       <PwInput />
-      <Button onSubmit={onSubmit}>로그인</Button>
+      <div className={styles.button}>
+        <Button onSubmit={onSubmit}>로그인</Button>
+      </div>
     </div>
   )
 }
