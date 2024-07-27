@@ -1,4 +1,5 @@
 import styles from '@/styles/create/TimeRange.module.css'
+import TimeLabelContainer from './TimeLabelContainer'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
 import { useNavigate } from 'react-router-dom'
@@ -20,30 +21,16 @@ export default function TimePage() {
         <Logo />
       </div>
       <p className={styles.top_label}>시간 범위 선택</p>
-      <div className={styles.timelabel}>
-        <p className={styles.label}>시작 시간</p>
-        <select
-          onChange={handleStartChange}
-          value={start}
-          className={styles.input}
-        >
-          {startOptions.map((option, idx) => (
-            <option key={idx} value={option.id}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className={styles.timelabel}>
-        <p className={styles.label}>종료 시간</p>
-        <select onChange={handleEndChange} value={end} className={styles.input}>
-          {endOptions.map((option, idx) => (
-            <option key={idx} value={option.id}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </div>
+      <TimeLabelContainer
+        value={start}
+        onChange={handleStartChange}
+        options={startOptions}
+      />
+      <TimeLabelContainer
+        value={end}
+        onChange={handleEndChange}
+        options={endOptions}
+      />
       <Button onClick={() => navigate(`/login?group=${groupName}`)}>
         모임 생성
       </Button>
