@@ -1,32 +1,32 @@
 import { useState, useEffect } from 'react'
 import { timeLabel } from '@/utils/timeOptions'
+import useGroupStore from '@/stores/groupStore'
 
 export default function useTime() {
-  const [start, setStart] = useState(0)
-  const [end, setEnd] = useState(48)
+  const { startTime, endTime, setStartTime, setEndTime } = useGroupStore()
   const [startOptions, setStartOptions] = useState(timeLabel)
   const [endOptions, setEndOptions] = useState(timeLabel)
 
   useEffect(() => {
-    const updatedEndOptions = timeLabel.filter(ele => ele.id > start)
+    const updatedEndOptions = timeLabel.filter(ele => ele.id > startTime)
     setEndOptions(updatedEndOptions)
-  }, [start])
+  }, [startTime])
 
   useEffect(() => {
-    const updatedStartOptions = timeLabel.filter(ele => ele.id < end)
+    const updatedStartOptions = timeLabel.filter(ele => ele.id < endTime)
     setStartOptions(updatedStartOptions)
-  }, [end])
+  }, [endTime])
 
   const handleStartChange = e => {
-    setStart(parseInt(e.currentTarget.value, 10))
+    setStartTime(parseInt(e.currentTarget.value, 10))
   }
 
   const handleEndChange = e => {
-    setEnd(parseInt(e.currentTarget.value, 10))
+    setEndTime(parseInt(e.currentTarget.value, 10))
   }
 
   return {
-    state: [start, end],
+    state: [startTime, endTime],
     label: [startOptions, endOptions],
     handler: [handleStartChange, handleEndChange],
   }

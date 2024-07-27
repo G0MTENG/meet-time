@@ -33,9 +33,9 @@ const useGroupStore = create(set => ({
       newWeeks[weekIdx] = !state.weeks[weekIdx]
       return { weeks: newWeeks }
     }),
-  startTime: null,
+  startTime: 18,
   setStartTime: time => set({ startTime: time }),
-  endTime: null,
+  endTime: 36,
   setEndTime: time => set({ endTime: time }),
 }))
 
