@@ -2,18 +2,24 @@ import ReactCalendar from 'react-calendar'
 import '@/styles/create/Calendar.css'
 import dayjs from 'dayjs'
 import useGroupStore from '@/stores/groupStore'
+import { getYearMonthDate } from '@/utils/dateHelper'
 
 export default function Calendar() {
   const { dates, setDates } = useGroupStore()
 
   const handleDayClick = date => {
-    setDates(date)
+    const [_year, _month, _date] = getYearMonthDate(date)
+    if (!_year || !_month || !_date) {
+      console.log('error')
+    }
+
+    setDates(`${_year}/${_month}/${_date}`)
   }
 
   const tileClassName = ({ date, view }) => {
     if (view === 'month') {
-      const dateString = date.toDateString()
-      if (dates.some(d => d.toDateString() === dateString)) {
+      const [_year, _month, _date] = getYearMonthDate(date)
+      if (dates.some(d => d === `${_year}/${_month}/${_date}`)) {
         return 'react-calendar__tile--highlight'
       }
     }

@@ -1,10 +1,16 @@
 const weekly = ['일', '월', '화', '수', '목', '금', '토', '일']
 
-const parseDate = date => {
-  let dateString = `${date.getMonth() + 1}월 ${date.getDate()}일`
-  const day = date.getDay()
-
-  return [dateString, weekly[day]]
+const getYearMonthDate = date => {
+  const year = date.getYear() + 1900
+  return [year, date.getMonth() + 1, date.getDate()]
 }
 
-export { parseDate }
+const getMonthDate = date => {
+  return [date.getMonth() + 1, date.getDate()]
+}
+
+const getMonthDateDay = date => {
+  return [date.getMonth() + 1, date.getDate(), weekly[date.getDay()]]
+}
+
+export { getYearMonthDate, getMonthDate, getMonthDateDay }

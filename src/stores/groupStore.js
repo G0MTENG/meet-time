@@ -1,4 +1,3 @@
-import { pickDate } from '@/utils/calendarHelper'
 import { create } from 'zustand'
 
 export const GROUPTYPE = {
@@ -14,8 +13,18 @@ const useGroupStore = create(set => ({
   dates: [],
   setDates: date =>
     set(state => {
-      const newState = pickDate(state, date)
-      return { dates: newState.dates }
+      const existingIndex = state.dates.indexOf(date)
+      let newDates = []
+      if (existingIndex >= 0) {
+        newDates = [
+          ...state.dates.slice(0, existingIndex),
+          ...state.dates.slice(existingIndex + 1),
+        ]
+      } else {
+        newDates = [...state.dates, date]
+      }
+
+      return { dates: newDates }
     }),
   weeks: Array(7).fill(false),
   setWeeks: weekIdx =>
