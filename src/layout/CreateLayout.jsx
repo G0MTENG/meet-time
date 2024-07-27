@@ -3,11 +3,11 @@ import Logo from '@/components/Logo'
 import GroupNameInput from '@/components/GroupNameInput'
 import SelectNavBar from '@/components/SelectNavBar'
 import Button from '@/components/Button'
-import useGroupCreate from '@/hooks/Button/handleGroupCreate'
+import useSettingDatesNWeeks from '@/hooks/Button/useSettingDatesNWeeks'
 import { Outlet } from 'react-router-dom'
 
 export default function CreateLayout() {
-  const handleClick = useGroupCreate()
+  const handleClick = useSettingDatesNWeeks()
 
   return (
     <div className={styles.layout}>
