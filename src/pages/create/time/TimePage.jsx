@@ -1,4 +1,4 @@
-import styles from '@/styles/create/TimeRange.module.css'
+import styles from '@/styles/create/TimePage.module.css'
 import TimeLabelContainer from './TimeLabelContainer'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'

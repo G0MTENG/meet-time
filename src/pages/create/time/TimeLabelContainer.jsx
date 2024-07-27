@@ -1,4 +1,4 @@
-import styles from '@/styles/create/TimeRange.module.css'
+import styles from '@/styles/create/TimeLabelContainer.module.css'
 
 export default function TimeLabelContainer({ value, onChange, options }) {
   return (
