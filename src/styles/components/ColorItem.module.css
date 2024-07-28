@@ -1,0 +1,5 @@
+.item {
+  height: 100%;
+  flex: 1;
+  border: 0.5px solid #000;
+}
