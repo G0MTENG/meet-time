@@ -1,4 +1,10 @@
+.logo {
+  margin-left: 22%;
+  margin-bottom: 10%;
+  width: 60%;
+}
 .first_label {
+  margin-top: 5%;
   text-align: center;
   font-weight: bold;
   font-size: 300%;
