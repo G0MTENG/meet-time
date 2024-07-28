@@ -1,5 +1,5 @@
 import styles from '@/styles/components/LogoBox.module.css'
-import SelectLogo from '@/components/LogoBox'
+import SelectLogo from '@/components/SelectLogo'
 import LinkCopy from '@/components/LinkCopy'
 import useGroupStore from '@/stores/groupStore'
 
