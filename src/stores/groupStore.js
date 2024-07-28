@@ -1,12 +1,13 @@
 import { create } from 'zustand'
 
 export const GROUPTYPE = {
+  NONE: 'N',
   DATE: 'D',
   WEEK: 'W',
 }
 
 const useGroupStore = create(set => ({
-  groupType: GROUPTYPE.DATE,
+  groupType: GROUPTYPE.NONE,
   setGroupType: type => set({ groupType: type }),
   groupName: '',
   setGroupName: name => set({ groupName: name }),

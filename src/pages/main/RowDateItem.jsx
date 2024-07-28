@@ -1,4 +1,4 @@
-import styles from '@/styles/main/RowItem.module.css'
+import styles from '@/styles/main/RowDateItem.module.css'
 
 export default function RowItem({ month, date, day }) {
   return (
