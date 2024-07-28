@@ -17,7 +17,8 @@ export default function useGroupCreate() {
 
     console.log(startTime, endTime)
 
-    navigate(`/login?group=${groupName}`)
+    navigate('/main')
+    // navigate(`/login?group=${groupName}`)
   }
 
   return create
