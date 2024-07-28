@@ -6,6 +6,7 @@ import Calendar from '@/pages/create/date/Calendar'
 import CreateLayout from '@/layout/CreateLayout'
 import SelectWeek from '@/pages/create/week/WeekSelectPage'
 import JoinPage from '@/pages/join/JoinPage'
+import MainPage from '@/pages/main/MainPage'
 
 const AppRoutes = () => (
   <Routes>
@@ -17,6 +18,7 @@ const AppRoutes = () => (
     </Route>
     <Route path="/create/time" element={<TimePage />} />
     <Route path="/join" element={<JoinPage />} />
+    <Route path="/main" element={<MainPage />} />
   </Routes>
 )
 
