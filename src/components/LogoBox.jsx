@@ -1,5 +1,5 @@
-import styles from '@/styles/timeSelect/LogoBox.module.css'
-import SelectLogo from './SelectLogo'
+import styles from '@/styles/components/LogoBox.module.css'
+import SelectLogo from '@/components/LogoBox'
 import LinkCopy from '@/components/LinkCopy'
 import useGroupStore from '@/stores/groupStore'
 

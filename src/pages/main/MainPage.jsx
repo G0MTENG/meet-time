@@ -1,3 +1,9 @@
+import MainLayout from '@/layout/MainLayout'
+
 export default function MainPage() {
-  return <div>안녕</div>
+  return (
+    <MainLayout>
+      <div>Helo</div>
+    </MainLayout>
+  )
 }

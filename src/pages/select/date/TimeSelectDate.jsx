@@ -1,4 +1,4 @@
-import styles from '@/styles/timeSelect/TimeSelectDate.module.css'
+import styles from '@/styles/select/TimeSelectDate.module.css'
 import { DUMMY, createTimes } from '@/utils/dummy'
 import { useEffect, useState } from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
