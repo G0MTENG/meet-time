@@ -1,0 +1,17 @@
+.palette {
+  width: 70%;
+  height: 3%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  order: 1;
+  flex: 1;
+}
