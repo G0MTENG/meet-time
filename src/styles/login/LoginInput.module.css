@@ -1,3 +1,7 @@
+.layout {
+  position: relative;
+  top: 30px;
+}
 .logo {
   margin-left: 22%;
   margin-bottom: 10%;
@@ -16,19 +20,31 @@
   margin: 5% 10%;
 }
 .header input {
-  border: 2px solid rgb(240, 240, 240);
-  padding: 5px 50px;
+  border: 1.5px solid rgb(209, 204, 228);
   border-radius: 10px;
-  padding-left: 5%;
+  padding: 5% 2.5%;
   height: 50px;
   font-weight: 400;
-  max-width: 500px;
+  max-width: 97%;
+}
+.input_header {
+  color: grey;
+  font-size: 110%;
+}
+input::placeholder {
+  color: rgb(187, 183, 183);
+  font-size: 150%;
 }
 .footer {
   color: red;
   font-size: 13px;
   font-weight: 500;
   height: 20px;
+}
+.error {
+  margin: 0 10%;
+  padding-bottom: 3%;
+  font-weight: bold;
 }
 .button {
   margin-left: 10%;
