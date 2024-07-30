@@ -9,6 +9,8 @@ export const GROUPTYPE = {
 const useGroupStore = create(set => ({
   groupType: GROUPTYPE.NONE,
   setGroupType: type => set({ groupType: type }),
+  mettingId: 0,
+  setMittingId: id => set({ mettingId: id }),
   groupName: '',
   setGroupName: name => set({ groupName: name }),
   dates: [],
