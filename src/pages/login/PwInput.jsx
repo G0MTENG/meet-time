@@ -1,16 +1,13 @@
 import styles from '@/styles/login/LoginInput.module.css'
-import { useState } from 'react'
 
-export default function PwInput() {
-  const [pw, setPw] = useState('')
-  const handleChangePw = e => setPw(e.target.value)
-
+export default function PwInput({ value, onChange }) {
   return (
     <div className={styles.header}>
-      <p>비밀번호</p>
+      <p className={styles.input_header}>비밀번호</p>
       <input
         type="password"
-        onChange={handleChangePw}
+        value={value}
+        onChange={onChange}
         placeholder="비밀번호 입력"
       />
     </div>
