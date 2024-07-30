@@ -1,9 +1,13 @@
+.pc {
+  max-width: 648px;;
+}
+
 .layout {
   overflow-y: auto;
-  max-width: 648px;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
+  position: relative;
 }
 
 .layout::-webkit-scrollbar {

@@ -34,11 +34,13 @@
   order: 1;
   font-size: 1.2rem;
   font-weight: 500;
+  color: #000;
 }
 
 .react-calendar__navigation__prev-button {
   font-size: 1.2rem;
   font-weight: 500;
+  color: #000;
 }
 
 /* month view */

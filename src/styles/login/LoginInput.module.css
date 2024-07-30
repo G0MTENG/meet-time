@@ -31,10 +31,12 @@
   color: grey;
   font-size: 110%;
 }
-input::placeholder {
+
+.input::placeholder {
   color: rgb(187, 183, 183);
   font-size: 150%;
 }
+
 .footer {
   color: red;
   font-size: 13px;
