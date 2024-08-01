@@ -4,15 +4,17 @@ import Logo from '@/components/Logo'
 import { useNavigate } from 'react-router-dom'
 import JoinInput from './components/JoinInput'
 import { useState } from 'react'
+import { getJoin } from '@/apis/axios/getJoin'
 
 export default function JoinPage() {
+  const [data, setData] = useState(null)
   const navigate = useNavigate()
   const [groupInput, setGroupInput] = useState('')
   const [error, setError] = useState('')
 
   const errorMsg = '잘못된 입력입니다. 다시 시도해주세요.'
 
-  const handleJoinClick = () => {
+  const handleJoinClick = async () => {
     if (!groupInput) {
       return
     }
@@ -23,7 +25,14 @@ export default function JoinPage() {
       return
     }
 
-    navigate(`/login?group=${_groupName}&tag=${_tag}`)
+    try {
+      const res = await getJoin(_groupName, _tag)
+      setData(res)
+      console.log(res)
+      navigate(`/login?group=${_groupName}&tag=${_tag}`)
+    } catch (e) {
+      setError('데이터를 전송하는데 실패하였습니다.')
+    }
   }
 
   return (

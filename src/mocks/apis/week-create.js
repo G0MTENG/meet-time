@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-const postWeekCreate = http.post('./meettime/week/create', () => {
+const postWeekCreate = http.post('/meettime/week/create', () => {
   return HttpResponse.json({
     meeting_id: 10,
     meeting_title: '멋사',

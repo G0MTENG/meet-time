@@ -8,18 +8,18 @@ export default function Calendar() {
   const { dates, setDates } = useGroupStore()
 
   const handleDayClick = date => {
-    const [_year, _month, _date, _day] = getDate(date)
-    if (!_year || !_month || !_date || !_day) {
+    const [_year, _month, _date] = getDate(date)
+    if (!_year || !_month || !_date) {
       console.log('error')
     }
 
-    setDates(`${_year}/${_month}/${_date}/${_day}`)
+    setDates(`${_year}-${_month}-${_date}`)
   }
 
   const tileClassName = ({ date, view }) => {
     if (view === 'month') {
-      const [_year, _month, _date, _day] = getDate(date)
-      if (dates.some(d => d === `${_year}/${_month}/${_date}/${_day}`)) {
+      const [_year, _month, _date] = getDate(date)
+      if (dates.some(d => d === `${_year}-${_month}-${_date}`)) {
         return 'react-calendar__tile--highlight'
       }
     }
