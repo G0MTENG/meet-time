@@ -5,16 +5,16 @@ import { GROUPTYPE } from '@/stores/groupStore'
 export default function useSettingDatesNWeeks() {
   const { setGroupType, groupName } = useGroupStore()
   const navigate = useNavigate()
-  const path = useLocation()
+  const { pathname } = useLocation()
 
   const handleGroupCreate = () => {
-    if (!groupName || path === '/create') {
+    if (!groupName || pathname === '/create') {
       return
     }
 
-    path === '/create/date'
-      ? setGroupType(GROUPTYPE.WEEK)
-      : setGroupType(GROUPTYPE.DATE)
+    pathname === '/create/date'
+      ? setGroupType(GROUPTYPE.DATE)
+      : setGroupType(GROUPTYPE.WEEK)
 
     navigate('/create/time')
   }
