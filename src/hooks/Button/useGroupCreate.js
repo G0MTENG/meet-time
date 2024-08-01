@@ -1,24 +1,25 @@
+import { useCreateDate } from '@/apis/queries/useCreateDate'
 import useGroupStore, { GROUPTYPE } from '@/stores/groupStore'
-import { useNavigate } from 'react-router-dom'
 
 export default function useGroupCreate() {
   const { groupType, groupName, dates, weeks, startTime, endTime } =
     useGroupStore()
-  const navigate = useNavigate()
+  const { mutate } = useCreateDate()
 
   const create = () => {
     if (groupType === GROUPTYPE.DATE) {
-      console.log(dates)
+      mutate({
+        meetingTitle: groupName,
+        meetingType: groupType,
+        meetingList: dates,
+        meetingStartTime: startTime,
+        meetingEndTime: endTime,
+      })
     } else if (groupType === GROUPTYPE.WEEK) {
       console.log(weeks)
     } else {
       return
     }
-
-    console.log(startTime, endTime)
-
-    navigate('/main')
-    // navigate(`/login?group=${groupName}`)
   }
 
   return create

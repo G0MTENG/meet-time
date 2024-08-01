@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getExam } from '@/apis/exampleAxios'
-import { useExamQuery } from '@/query/exampleQuery'
+import { useExamQuery } from '@/apis/queries/exampleQuery'
 
 export default function Example() {
   const [msg1, setMsg1] = useState('')

@@ -3,7 +3,7 @@ const weekly = ['일', '월', '화', '수', '목', '금', '토', '일']
 
 const getDate = date => {
   const year = date.getYear() + 1900
-  return [year, date.getMonth() + 1, date.getDate(), weekly[date.getDay()]]
+  return [year, date.getMonth() + 1, date.getDate()]
 }
 
 const getYearMonthDate = date => {
