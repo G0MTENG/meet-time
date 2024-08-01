@@ -1,6 +1,6 @@
 import { http, HttpResponse } from 'msw'
 
-const postExample4 = http.post('/meettime/:meeting_id/login', () => {
+const postLogin = http.post('/meettime/:meeting_id/login', () => {
   return HttpResponse.json({
     meeting_id: 1,
     user_id: 17,
@@ -9,4 +9,4 @@ const postExample4 = http.post('/meettime/:meeting_id/login', () => {
   })
 })
 
-export { postExample4 }
+export { postLogin }

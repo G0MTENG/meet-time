@@ -1,21 +1,6 @@
-import { getExample } from './apis/example'
-import { postExample } from './apis/example2'
-import { postExample2 } from './apis/example3'
-import { postExample3 } from './apis/example4'
-import { postExample4 } from './apis/example5'
-import { getExample2 } from './apis/example6'
-import { postExample5 } from './apis/example7'
-import { getExample3 } from './apis/example8'
-import { getExample4 } from './apis/example9'
+import { postDayCreate } from './apis/day-create'
+import { postJoin } from './apis/join'
+import { postLogin } from './apis/login'
+import { postWeekCreate } from './apis/week-create'
 
-export const handlers = [
-  getExample,
-  postExample,
-  postExample2,
-  postExample3,
-  postExample4,
-  getExample2,
-  postExample5,
-  getExample3,
-  getExample4,
-]
+export const handlers = [postDayCreate, postWeekCreate, postLogin, postJoin]
