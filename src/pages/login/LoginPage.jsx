@@ -5,16 +5,20 @@ import PwInput from './PwInput'
 import styles from '@/styles/login/LoginInput.module.css'
 import { useState } from 'react'
 import { useEnterLoginFirst } from '@/hooks/api/useEnterLoginFirst'
+import { useLogin } from '@/apis/queries/useLogin'
+import { useGroupPersistStore } from '@/stores/groupPersistStore'
 
 export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   useEnterLoginFirst()
+  const { mutate: loginMutate } = useLogin()
+  const { meetingId } = useGroupPersistStore()
 
   const handleLogin = () => {
     if (username === '정다영' && password === '1234') {
-      console.log('Login successful')
+      loginMutate({ id: meetingId, nickname: username, password })
     } else {
       setError('잘못된 이름 또는 비밀번호입니다.')
     }
