@@ -20,11 +20,13 @@ export default function TimePage() {
       </div>
       <p className={styles.top_label}>시간 범위 선택</p>
       <TimeLabelContainer
+        label={'시작 시간'}
         value={start}
         onChange={handleStartChange}
         options={startOptions}
       />
       <TimeLabelContainer
+        label={'종료 시간'}
         value={end}
         onChange={handleEndChange}
         options={endOptions}
