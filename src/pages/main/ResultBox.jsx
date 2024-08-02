@@ -1,9 +1,10 @@
 import styles from '@/styles/main/ResultBox.module.css'
 import ColLabel from '@/pages/main/ColLabel'
-import useGroupStore, { GROUPTYPE } from '@/stores/groupStore'
+import useGroupStore from '@/stores/groupStore'
 import { getTimeLabel } from '@/utils/dateHelper'
 import RowLabelDate from './RowLabelDate'
 import RowLabelWeek from './RowLabelWeek'
+import { GROUPTYPE } from '@/utils/groupType'
 
 export default function ResultBox() {
   const { groupType, startTime, endTime, weeks, dates } = useGroupStore()

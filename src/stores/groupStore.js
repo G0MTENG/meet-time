@@ -1,10 +1,5 @@
 import { create } from 'zustand'
-
-export const GROUPTYPE = {
-  NONE: 'N',
-  DATE: 'D',
-  WEEK: 'W',
-}
+import { GROUPTYPE } from '@/utils/groupType'
 
 const useGroupStore = create(set => ({
   groupType: GROUPTYPE.NONE,

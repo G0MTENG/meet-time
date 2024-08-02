@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import useGroupStore from '@/stores/groupStore'
-import { GROUPTYPE } from '@/stores/groupStore'
+import { GROUPTYPE } from '@/utils/groupType'
 
 export default function useSettingDatesNWeeks() {
   const { setGroupType, groupName } = useGroupStore()

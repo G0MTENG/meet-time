@@ -1,6 +1,7 @@
 import { useCreateDate } from '@/apis/queries/useCreateDate'
 import { useCreateWeek } from '@/apis/queries/useCreateWeek'
-import useGroupStore, { GROUPTYPE } from '@/stores/groupStore'
+import useGroupStore from '@/stores/groupStore'
+import { GROUPTYPE } from '@/utils/groupType'
 
 export default function useGroupCreate() {
   const { groupType, groupName, dates, weeks, startTime, endTime } =

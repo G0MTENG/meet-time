@@ -18,6 +18,7 @@ export default function LoginPage() {
       setError('잘못된 이름 또는 비밀번호입니다.')
     }
   }
+
   return (
     <div className={styles.layout}>
       <div className={styles.logo}>
