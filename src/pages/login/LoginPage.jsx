@@ -4,20 +4,22 @@ import Logo from '@/components/Logo'
 import PwInput from './PwInput'
 import styles from '@/styles/login/LoginInput.module.css'
 import { useState } from 'react'
+import { useEnterLoginFirst } from '@/hooks/api/useEnterLoginFirst'
 
 export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  useEnterLoginFirst()
 
   const handleLogin = () => {
-    if (username === 'correctUsername' && password === 'correctPassword') {
+    if (username === '정다영' && password === '1234') {
       console.log('Login successful')
-      setError('')
     } else {
       setError('잘못된 이름 또는 비밀번호입니다.')
     }
   }
+
   return (
     <div className={styles.layout}>
       <div className={styles.logo}>
