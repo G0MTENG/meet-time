@@ -3,12 +3,33 @@ import Button from '@/components/Button'
 import Logo from '@/components/Logo'
 import PwInput from './PwInput'
 import styles from '@/styles/login/LoginInput.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useGroupPersistStore } from '@/stores/groupPersistStore'
+import { GROUPTYPE } from '@/utils/groupType'
+import { useSearchParams } from 'react-router-dom'
+import { getJoin } from '@/apis/axios/getJoin'
+import { useGroupDataStore } from '@/hooks/api/useGroupDataStore'
 
 export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const { meetingType } = useGroupPersistStore()
+  const [searchParams, _] = useSearchParams()
+  const storeRequest = useGroupDataStore()
+
+  useEffect(() => {
+    if (meetingType === GROUPTYPE.NONE) {
+      const [_group, _tag] = [
+        searchParams.get('group'),
+        searchParams.get('tag'),
+      ]
+      ;(async function (group, tag) {
+        const res = await getJoin(group, tag)
+        storeRequest(res)
+      })(_group, _tag)
+    }
+  }, [])
 
   const handleLogin = () => {
     if (username === 'correctUsername' && password === 'correctPassword') {
