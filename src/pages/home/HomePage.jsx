@@ -1,10 +1,16 @@
 import Button from '@/components/Button'
 import Logo from '@/components/Logo'
+import { useGroupPersistStore } from '@/stores/groupPersistStore'
 import styles from '@/styles/home/HomePage.module.css'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function HomePage() {
   const navigate = useNavigate()
+  const { initial } = useGroupPersistStore()
+  useEffect(() => {
+    initial()
+  }, [])
 
   return (
     <div className={styles.container}>

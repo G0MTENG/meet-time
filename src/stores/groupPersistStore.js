@@ -5,6 +5,16 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 export const useGroupPersistStore = create(
   persist(
     set => ({
+      initial: () =>
+        set({
+          meetingId: 0,
+          meetingTite: '',
+          meetingType: GROUPTYPE.NONE,
+          meetingList: null,
+          meetingDayId: null,
+          meetingStartTime: null,
+          meetingEndTime: null,
+        }),
       meetingId: 0,
       setMeetingId: id => set({ meetingId: id }),
       meetingTitle: '',

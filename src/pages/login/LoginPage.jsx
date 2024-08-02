@@ -13,9 +13,8 @@ export default function LoginPage() {
   useEnterLoginFirst()
 
   const handleLogin = () => {
-    if (username === 'correctUsername' && password === 'correctPassword') {
+    if (username === '정다영' && password === '1234') {
       console.log('Login successful')
-      setError('')
     } else {
       setError('잘못된 이름 또는 비밀번호입니다.')
     }
