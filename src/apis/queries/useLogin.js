@@ -11,6 +11,7 @@ export const useLogin = () => {
     mutationFn: data => postLogin(data),
     onSuccess: data => {
       setUserId(data?.id)
+      console.log(meetingTitle, meetingId)
       console.log('로그인 성공')
       navigate(`/select?group=${meetingTitle}&tag=${meetingId}`)
     },

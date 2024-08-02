@@ -2,7 +2,7 @@ import { http, HttpResponse } from 'msw'
 
 const postJoin = http.get('/meettime/join', ({ request }) => {
   const url = new URL(request.url)
-  const meetingId = url.searchParams.get('mettingId')
+  const meetingId = url.searchParams.get('meetingId')
   const meetingTitle = url.searchParams.get('meetingTitle')
 
   return HttpResponse.json({

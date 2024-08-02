@@ -20,7 +20,7 @@ export const useHandleJoinClick = () => {
 
     try {
       const res = await getJoin(_groupName, _tag)
-      console.log(res)
+      console.log('모임 입장 성공', res)
       storeRequest(res)
       navigate(`/login?group=${_groupName}&tag=${_tag}`)
     } catch (e) {
