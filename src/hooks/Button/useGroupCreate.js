@@ -9,7 +9,7 @@ export default function useGroupCreate() {
   const { mutate: dateMutate } = useCreateDate()
   const { mutate: weekMutate } = useCreateWeek()
 
-  const create = () => {
+  return () => {
     const createGroupData = {
       meetingTitle: groupName,
       meetingType: groupType,
@@ -35,6 +35,4 @@ export default function useGroupCreate() {
       return
     }
   }
-
-  return create
 }

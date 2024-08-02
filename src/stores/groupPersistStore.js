@@ -14,6 +14,7 @@ export const useGroupPersistStore = create(
           meetingDayId: null,
           meetingStartTime: null,
           meetingEndTime: null,
+          userId: null,
         }),
       meetingId: 0,
       setMeetingId: id => set({ meetingId: id }),
@@ -29,6 +30,8 @@ export const useGroupPersistStore = create(
       setMeetingStartTime: time => set({ meetingStartTime: time }),
       meetingEndTime: 48,
       setMeetingEndTime: time => set({ meetingEndTime: time }),
+      userId: null,
+      setUserId: id => set({ userId: id }),
     }),
     {
       name: 'group-storage',
