@@ -14,7 +14,7 @@ export default function DateSelector({ meetingList, index, handleClick }) {
             isActive={isActive}
             handleClick={handleClick}
             date={_date}
-            day={_day}
+            day={`${_day}요일`}
             idx={idx}
           />
         )

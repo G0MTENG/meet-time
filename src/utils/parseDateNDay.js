@@ -8,6 +8,6 @@ export const parseDateNDay = date => {
   const dateObj = new Date(date)
   return [
     `${dateObj.getMonth()}월 ${dateObj.getDate()}일`,
-    `${week[dateObj.getDay()]}요일`,
+    week[dateObj.getDay()],
   ]
 }

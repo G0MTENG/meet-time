@@ -1,5 +1,5 @@
 import styles from '@/styles/main/RowLabel.module.css'
-import RowItem from './RowWeekItem'
+import RowItem from '@/pages/main/components/RowWeekItem'
 import { weekly } from '@/utils/dateHelper'
 
 export default function RowLabelWeek({ weeks }) {

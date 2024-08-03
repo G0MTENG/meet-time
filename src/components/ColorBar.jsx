@@ -1,7 +1,7 @@
 import styles from '@/styles/components/ColorBar.module.css'
 import ColorItem from './ColorItem'
 
-export default function ColorBar({ numOfGroupPeople }) {
+export default function ColorBar({ numOfGroupPeople = 0 }) {
   const unit = 100 / (numOfGroupPeople - 1)
 
   return (

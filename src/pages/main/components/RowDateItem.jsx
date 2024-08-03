@@ -1,12 +1,10 @@
 import styles from '@/styles/main/RowDateItem.module.css'
 
-export default function RowItem({ month, date, day }) {
+export default function RowItem({ date, day }) {
   return (
     <li className={styles.dateContainer}>
       <div>{day}</div>
-      <div>
-        {month}월 {date}일
-      </div>
+      <div>{date}</div>
     </li>
   )
 }
