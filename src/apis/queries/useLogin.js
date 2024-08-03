@@ -10,7 +10,7 @@ export const useLogin = () => {
   return useMutation({
     mutationFn: data => postLogin(data),
     onSuccess: data => {
-      setUserId(data?.id)
+      setUserId(data?.user_id)
       console.log(meetingTitle, meetingId)
       console.log('로그인 성공')
       navigate(`/select?group=${meetingTitle}&tag=${meetingId}`)

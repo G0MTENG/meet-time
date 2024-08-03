@@ -1,60 +1,53 @@
+import { useGroupPersistStore } from '@/stores/groupPersistStore'
 import styles from '@/styles/select/TimeSelectDate.module.css'
-import { DUMMY, createTimes } from '@/utils/dummy'
+import { createTimeLabels } from '@/utils/createTimeLabel'
 import { useEffect, useState } from 'react'
-import { IoIosArrowForward } from 'react-icons/io'
+import DateSelector from './components/DateSelector'
+import TimeSelector from './components/TimeSelector'
 
-export default function TimeSelectDate() {
-  const timeLabels = createTimes('9:00', '16:00')
-  const [date, setDate] = useState(0)
-  const [times, setTimes] = useState(DUMMY[0].times)
+export default function TimeSelectDate({ list, keys, start, end }) {
+  const timeLabels = createTimeLabels(start, end)
+  const [index, setIndex] = useState(0)
+  const { meetingList } = useGroupPersistStore()
+  const [listState, setListState] = useState(list)
+  const [possible, setPossible] = useState([])
 
   useEffect(() => {
-    setTimes(DUMMY[date].times)
-  }, [date])
+    setPossible(listState[keys[index]] || [])
+  }, [listState, keys, index])
 
   const handleDateClick = idx => {
-    DUMMY[date].times = [...times]
-    setDate(idx)
+    if (idx !== index) {
+      const updatedList = { ...listState }
+      updatedList[keys[index]] = possible
+      setListState(updatedList)
+      setIndex(idx)
+    }
   }
 
-  const handleTimeClick = idx => {
-    const copyTimes = [...times]
-    copyTimes[idx] = copyTimes[idx] === 0 ? 1 : 0
-    setTimes(copyTimes)
+  const handleTimeClick = id => {
+    const idx = possible.findIndex(item => item === id)
+    const updatedPossible = [...possible]
+    if (idx === -1) {
+      updatedPossible.push(id)
+    } else {
+      updatedPossible.splice(idx, 1)
+    }
+    setPossible(updatedPossible)
   }
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.dateSelector}>
-        {DUMMY.map((ele, idx) => {
-          const clicked = date === idx
-          return (
-            <div
-              key={ele.id}
-              className={`${styles.dateContainer} ${clicked ? styles.dateClick : ''}`}
-              onClick={() => handleDateClick(idx)}
-            >
-              <h5>{ele.date}</h5>
-              <p>{ele.day}</p>
-              {clicked && <IoIosArrowForward className={styles.icon} />}
-            </div>
-          )
-        })}
-      </div>
-      <div className={styles.timeSelector}>
-        {timeLabels.map((label, idx) => {
-          return (
-            <div
-              key={idx}
-              className={`${styles.timeContainer} ${times[idx] === 1 ? styles.timeClick : ''}`}
-              onClick={() => handleTimeClick(idx)}
-            >
-              <p>{label}</p>
-              <div></div>
-            </div>
-          )
-        })}
-      </div>
+      <DateSelector
+        meetingList={meetingList}
+        index={index}
+        handleClick={handleDateClick}
+      />
+      <TimeSelector
+        timeLabels={timeLabels}
+        possible={possible}
+        handleClick={handleTimeClick}
+      />
     </div>
   )
 }

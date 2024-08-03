@@ -55,26 +55,4 @@ const DUMMY = [
   },
 ]
 
-const createTimes = (start, end) => {
-  const times = []
-  const [startHour, startMin] = start.split(':').map(e => +e)
-  const [endHour, endMin] = end.split(':').map(e => +e)
-
-  let h = startHour
-  for (; h < endHour; ++h) {
-    times.push(`${h}:00`)
-    times.push(`${h}:30`)
-  }
-
-  if (startMin === 30) {
-    times.shift()
-  }
-
-  if (endMin === 30) {
-    times.push(`${h}:00`)
-  }
-
-  return times
-}
-
-export { DUMMY, createTimes }
+export { DUMMY }

@@ -1,0 +1,13 @@
+.timeSelector {
+  padding: 2% 0 2% 0;
+  border: 0.5px solid #D5D4DF;
+  flex: 1;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 5.65px 5.65px 5.65px 0 #D5D4DF;
+  overflow: auto;
+}
+
+.timeSelector::-webkit-scrollbar {
+  display: none;
+}
