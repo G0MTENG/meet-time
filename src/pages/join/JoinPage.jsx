@@ -22,7 +22,9 @@ export default function JoinPage() {
       <p>모임이름과 Tag를 입력해주세요!</p>
       <JoinInput value={groupInput} set={setGroupInput} />
       <div className={styles.error}>{error}</div>
-      <Button onClick={handleJoinClick}>모입 입장</Button>
+      <div className={styles.joining}>
+        <Button onClick={handleJoinClick}>모입 입장</Button>
+      </div>
     </div>
   )
 }

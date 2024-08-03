@@ -25,7 +25,7 @@
   padding: 5% 2.5%;
   height: 50px;
   font-weight: 400;
-  max-width: 97%;
+  width: 96.5%;
 }
 .input_header {
   color: grey;
@@ -50,4 +50,5 @@
 }
 .button {
   margin-left: 10%;
+  width: 77.4%;
 }
