@@ -26,3 +26,41 @@
   background-color: #746F6F;
   border-radius: 10px;
 }
+
+.header {
+  width: 80%;
+  margin: 5% auto 10% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header div {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.imgWrapper {
+  width: 20%;
+}
+
+.list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.list hr {
+  margin: 3rem 0 3rem 0;
+}
+
+.list h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.list ul {
+  display: flex;
+  gap: 10px;
+}

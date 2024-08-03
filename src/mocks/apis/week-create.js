@@ -5,7 +5,7 @@ const postWeekCreate = http.post('/meettime/week/create', () => {
     meeting_id: 10,
     meeting_title: '멋사',
     meeting_type: 'W',
-    meeting_list: [0, 6],
+    meeting_list: [1, 7],
     meeting_day_id: [40, 41],
     meeting_start_time: 18,
     meeting_end_time: 24,

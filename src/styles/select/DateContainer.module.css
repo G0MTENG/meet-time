@@ -1,0 +1,36 @@
+.dateContainer {
+  width: 84%;
+  height: 16%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  margin: 2% auto;
+  border-radius: 21px;
+  position: relative;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dateContainer:hover {
+    background-color: #E8E8E8;
+  }
+}
+
+.dateContainer h5 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.dateContainer p {
+  font-size: 16px;
+}
+
+.dateClick {
+  background-color: #E8E8E8;
+}
+
+.icon {
+  position: absolute;
+  top: 45%;
+  right: 5%;
+}

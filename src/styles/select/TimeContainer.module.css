@@ -1,0 +1,28 @@
+.timeContainer {
+  width: 95%;
+  height: 8%;
+  margin: 2% auto;
+  display: flex;
+  text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .timeContainer:hover div {
+    background-color: rgba(60,58,58, 0.7);
+  }
+}
+
+.timeContainer p {
+  padding-top: 5px;
+  font-size: 1rem;
+  flex: 3;
+}
+
+.timeContainer div {
+  background-color: #E8E8E8;
+  flex: 7;
+}
+
+.timeClick div {
+  background-color: #3C3A3A;
+}

@@ -1,0 +1,13 @@
+.weekSelector {
+  padding: 2% 0 2% 0;
+  border: 0.5px solid #D5D4DF;
+  flex: 1;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 5.65px 5.65px 0 #D5D4DF;
+  overflow: auto;
+}
+
+.dateSelector::-webkit-scrollbar {
+  display: none;
+}

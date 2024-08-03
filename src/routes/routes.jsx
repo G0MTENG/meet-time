@@ -8,7 +8,6 @@ import SelectWeek from '@/pages/create/week/WeekSelectPage'
 import JoinPage from '@/pages/join/JoinPage'
 import MainPage from '@/pages/main/MainPage'
 import SelectPage from '@/pages/select/SelectPage'
-import Example from '@/pages/exam/Example'
 
 const AppRoutes = () => (
   <Routes>
@@ -22,7 +21,6 @@ const AppRoutes = () => (
     <Route path="/join" element={<JoinPage />} />
     <Route path="/main" element={<MainPage />} />
     <Route path="/select" element={<SelectPage />} />
-    <Route path="/exam" element={<Example />} />
   </Routes>
 )
 

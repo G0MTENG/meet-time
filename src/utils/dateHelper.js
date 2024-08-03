@@ -1,5 +1,5 @@
 import { timeLabel } from './timeOptions'
-const weekly = ['일', '월', '화', '수', '목', '금', '토', '일']
+const weekly = ['', '월', '화', '수', '목', '금', '토', '일']
 
 const getDate = date => {
   const year = date.getYear() + 1900
