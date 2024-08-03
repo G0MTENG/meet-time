@@ -4,11 +4,13 @@ import { createTimeLabels } from '@/utils/createTimeLabel'
 import { useEffect, useState } from 'react'
 import DateSelector from './components/DateSelector'
 import TimeSelector from './components/TimeSelector'
+import WeekSelector from './components/WeekSelector'
+import { GROUPTYPE } from '@/utils/groupType'
 
 export default function TimeSelectDate({ list, keys, start, end }) {
   const timeLabels = createTimeLabels(start, end)
   const [index, setIndex] = useState(0)
-  const { meetingList } = useGroupPersistStore()
+  const { meetingList, meetingType } = useGroupPersistStore()
   const [listState, setListState] = useState(list)
   const [possible, setPossible] = useState([])
 
@@ -38,11 +40,19 @@ export default function TimeSelectDate({ list, keys, start, end }) {
 
   return (
     <div className={styles.wrapper}>
-      <DateSelector
-        meetingList={meetingList}
-        index={index}
-        handleClick={handleDateClick}
-      />
+      {meetingType === GROUPTYPE.DATE ? (
+        <DateSelector
+          meetingList={meetingList}
+          index={index}
+          handleClick={handleDateClick}
+        />
+      ) : (
+        <WeekSelector
+          meetingList={meetingList}
+          index={index}
+          handleClick={handleDateClick}
+        />
+      )}
       <TimeSelector
         timeLabels={timeLabels}
         possible={possible}
