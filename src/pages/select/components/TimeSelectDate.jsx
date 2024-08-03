@@ -7,15 +7,22 @@ import TimeSelector from './TimeSelector'
 import WeekSelector from './WeekSelector'
 import { GROUPTYPE } from '@/utils/groupType'
 
-export default function TimeSelectDate({ list, keys, start, end }) {
+export default function TimeSelectDate({
+  listState,
+  setListState,
+  keys,
+  start,
+  end,
+}) {
   const timeLabels = createTimeLabels(start, end)
   const [index, setIndex] = useState(0)
   const { meetingList, meetingType } = useGroupPersistStore()
-  const [listState, setListState] = useState(list)
   const [possible, setPossible] = useState([])
 
   useEffect(() => {
-    setPossible(listState[keys[index]] || [])
+    if (listState) {
+      setPossible(listState[keys[index]] || [])
+    }
   }, [listState, keys, index])
 
   const handleDateClick = idx => {

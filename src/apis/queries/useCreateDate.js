@@ -10,7 +10,7 @@ const useCreateDate = () => {
     mutationFn: data => postCreateDate(data),
     onSuccess: data => {
       storeRequest(data)
-      console.log('생성 성공:', data)
+      alert(`${data?.meeting_title}이 생성되었습니다!`)
       navigate(`/login?group=${data?.meeting_title}&tag=${data?.meeting_id}`, {
         replace: true,
       })
