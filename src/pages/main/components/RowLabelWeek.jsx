@@ -4,11 +4,10 @@ import { weekly } from '@/utils/dateHelper'
 
 export default function RowLabelWeek({ weeks }) {
   const weekLabel = []
-  weeks.forEach((ele, idx) => {
-    if (ele === true) {
-      weekLabel.push(weekly[idx])
-    }
+  weeks.forEach(ele => {
+    weekLabel.push(weekly[ele])
   })
+  console.log(weekLabel)
 
   return (
     <ul className={styles.container}>

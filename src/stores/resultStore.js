@@ -11,7 +11,7 @@ export const useResultStore = create(set => ({
   meetingDayId: null,
   setMeetingDayId: list => set({ meetingDayId: list }),
   meetingStartTime: 0,
-  setMeetingStartTime: time => set({ meetingStartTIme: time }),
+  setMeetingStartTime: time => set({ meetingStartTime: time }),
   meetingEndTime: 48,
   setMeetingEndTime: time => set({ meetingEndTime: time }),
   allPeople: null,

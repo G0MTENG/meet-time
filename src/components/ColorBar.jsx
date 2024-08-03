@@ -1,8 +1,19 @@
 import styles from '@/styles/components/ColorBar.module.css'
 import ColorItem from './ColorItem'
+import { useColorStore } from '@/stores/colorStore'
+import { useEffect } from 'react'
 
-export default function ColorBar({ numOfGroupPeople = 0 }) {
-  const unit = 100 / (numOfGroupPeople - 1)
+export default function ColorBar({ numOfGroupPeople = 1 }) {
+  const { colorList, setColorList } = useColorStore()
+  const unit = 100 / numOfGroupPeople
+
+  useEffect(() => {
+    const colors = Array.from(
+      { length: numOfGroupPeople },
+      (_, idx) => (unit * (idx + 1)) / 100,
+    )
+    setColorList(colors)
+  }, [numOfGroupPeople])
 
   return (
     <div className={styles.palette}>
@@ -10,8 +21,8 @@ export default function ColorBar({ numOfGroupPeople = 0 }) {
       <div
         className={styles.right}
       >{`${numOfGroupPeople}/${numOfGroupPeople}`}</div>
-      {Array.from({ length: numOfGroupPeople }).map((_, idx) => (
-        <ColorItem key={idx} color={(unit * idx) / 100} />
+      {colorList.map((color, idx) => (
+        <ColorItem key={idx} color={color} />
       ))}
     </div>
   )

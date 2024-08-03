@@ -1,38 +1,33 @@
 import styles from '@/styles/main/ResultBox.module.css'
 import ColLabel from '@/pages/main/components/ColLabel'
-import { getTimeLabel } from '@/utils/dateHelper'
-import RowLabelDate from './RowLabelDate'
-import RowLabelWeek from './RowLabelWeek'
-import { GROUPTYPE } from '@/utils/groupType'
 import { useResultStore } from '@/stores/resultStore'
 import SelectInfo from './SelectInfo'
+import WhichRowLabel from './WhichRowLabel'
+import { useEffect, useState } from 'react'
+import { getTimeLabel } from '@/utils/dateHelper'
 
 export default function ResultBox({ handleModalOpen }) {
   const { meetingType, meetingList, meetingStartTime, meetingEndTime } =
     useResultStore()
+  const [label, setLabel] = useState(null)
 
-  const colLabel = getTimeLabel(meetingStartTime, meetingEndTime)
-  const rowLabel =
-    meetingType === GROUPTYPE.DATE ? (
-      <RowLabelDate dates={meetingList} />
-    ) : meetingType === GROUPTYPE.WEEK ? (
-      <RowLabelWeek weeks={meetingList} />
-    ) : undefined
-
-  if (!rowLabel) {
-    return <div>Error</div>
-  }
+  useEffect(() => {
+    setLabel(getTimeLabel(meetingStartTime, meetingEndTime))
+  }, [meetingStartTime, meetingEndTime])
 
   return (
-    <div className={styles.container}>
-      <div />
-      {rowLabel}
-      <ColLabel label={colLabel} />
-      <SelectInfo
-        rowNum={meetingList.length}
-        colNum={colLabel.length}
-        handleModalOpen={handleModalOpen}
-      />
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div />
+        <WhichRowLabel meetingType={meetingType} meetingList={meetingList} />
+        <ColLabel label={label} />
+        <SelectInfo
+          rowNum={meetingList?.length}
+          colNum={meetingEndTime - meetingStartTime}
+          label={label}
+          handleModalOpen={handleModalOpen}
+        />
+      </div>
     </div>
   )
 }

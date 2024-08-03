@@ -5,6 +5,7 @@ import { postWeekCreate } from '@/mocks/apis/week-create'
 import { getSelect } from '@/mocks/apis/select'
 import { postSelect } from '@/mocks/apis/post-select'
 import { getResult } from '@/mocks/apis/result'
+import { getResultDetail } from './apis/result-detail'
 
 export const handlers = [
   postDayCreate,
@@ -14,4 +15,5 @@ export const handlers = [
   getSelect,
   postSelect,
   getResult,
+  getResultDetail,
 ]

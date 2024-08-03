@@ -22,4 +22,5 @@
   flex-shrink: 0;
   background-color: #E8E8E8;
   flex-grow: 1;
+  border-radius: 4px;
 }
