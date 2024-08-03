@@ -1,5 +1,5 @@
 import MainLayout from '@/layout/MainLayout'
-import TimeSelectDate from './TimeSelectDate'
+import TimeSelectDate from '@/pages/select/components/TimeSelectDate'
 import Button from '@/components/Button'
 import { useGroupPersistStore } from '@/stores/groupPersistStore'
 import { useGetSelect } from '@/apis/queries/useGetSelect'

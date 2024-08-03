@@ -2,9 +2,9 @@ import { useGroupPersistStore } from '@/stores/groupPersistStore'
 import styles from '@/styles/select/TimeSelectDate.module.css'
 import { createTimeLabels } from '@/utils/createTimeLabel'
 import { useEffect, useState } from 'react'
-import DateSelector from './components/DateSelector'
-import TimeSelector from './components/TimeSelector'
-import WeekSelector from './components/WeekSelector'
+import DateSelector from './DateSelector'
+import TimeSelector from './TimeSelector'
+import WeekSelector from './WeekSelector'
 import { GROUPTYPE } from '@/utils/groupType'
 
 export default function TimeSelectDate({ list, keys, start, end }) {
