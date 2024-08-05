@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import { getJoin } from '@/apis/axios/getJoin'
-import { useGroupDataStore } from '../api/useGroupDataStore'
+import { useGroupJoinDataStore } from '../api/useGroupJoinDataStore'
 
 export const useHandleJoinClick = () => {
   const navigate = useNavigate()
-  const storeRequest = useGroupDataStore()
+  const storeRequest = useGroupJoinDataStore()
   const errorMsg = '잘못된 입력입니다. 다시 시도해주세요.'
 
   return async (groupInput, setError) => {

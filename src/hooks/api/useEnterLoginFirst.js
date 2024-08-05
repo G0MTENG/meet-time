@@ -1,14 +1,14 @@
-import { useGroupDataStore } from '@/hooks/api/useGroupDataStore'
 import { useSearchParams } from 'react-router-dom'
 import { useGroupPersistStore } from '@/stores/groupPersistStore'
 import { useEffect } from 'react'
 import { getJoin } from '@/apis/axios/getJoin'
 import { GROUPTYPE } from '@/utils/groupType'
+import { useGroupJoinDataStore } from './useGroupJoinDataStore'
 
 export const useEnterLoginFirst = () => {
   const [searchParams] = useSearchParams()
   const { meetingType } = useGroupPersistStore()
-  const storeRequest = useGroupDataStore()
+  const storeRequest = useGroupJoinDataStore()
 
   useEffect(() => {
     if (meetingType === GROUPTYPE.NONE) {
