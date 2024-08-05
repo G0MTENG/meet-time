@@ -4,6 +4,12 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 export const useLoginStore = create(
   persist(
     set => ({
+      loginInit: () =>
+        set({
+          isLogin: false,
+          meetingId: 0,
+          meetingTitle: '',
+        }),
       isLogin: false,
       setLoginout: () => set({ isLogin: false }),
       setLogin: () => set({ isLogin: true }),

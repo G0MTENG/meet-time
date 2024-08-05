@@ -1,6 +1,7 @@
 import Button from '@/components/Button'
 import Logo from '@/components/Logo'
 import { useGroupPersistStore } from '@/stores/groupPersistStore'
+import { useLoginStore } from '@/stores/loginStore'
 import styles from '@/styles/home/HomePage.module.css'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -8,8 +9,10 @@ import { useNavigate } from 'react-router-dom'
 export default function HomePage() {
   const navigate = useNavigate()
   const { initial } = useGroupPersistStore()
+  const { loginInit } = useLoginStore()
   useEffect(() => {
     initial()
+    loginInit()
   }, [])
 
   return (
