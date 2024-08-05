@@ -11,7 +11,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'Meet Time',
-        short_name: 'MeetTime',
+        short_name: 'Meet Time',
         start_url: '/',
         display: 'standalone',
         description: 'Application for adjusting excercise time',
