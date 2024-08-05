@@ -11,3 +11,21 @@
 .timeSelector::-webkit-scrollbar {
   display: none;
 }
+
+.timeContainer {
+  width: 95%;
+  height: 8%;
+  margin: 2% auto;
+  display: flex;
+  text-align: center;
+}
+
+.timeContainer p {
+  padding-top: 5px;
+  font-size: 1rem;
+  flex: 3;
+}
+
+.timeContainer div {
+  flex: 7;
+}

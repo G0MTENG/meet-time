@@ -10,7 +10,7 @@ export const useUpdateSelectTime = () => {
     mutationFn: data => postSelect(data),
     onSuccess: () => {
       alert('완료되었습니다.')
-      navigate(`/main?group=${meetingTitle}&id=${meetingId}`)
+      navigate(`/main?group=${meetingTitle}&tag=${meetingId}`)
     },
     onError: error => {
       console.log('데이터 업데이트 실패', error)
