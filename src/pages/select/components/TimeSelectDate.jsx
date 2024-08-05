@@ -64,6 +64,7 @@ export default function TimeSelectDate({
         timeLabels={timeLabels}
         possible={possible}
         handleClick={handleTimeClick}
+        end={end}
       />
     </div>
   )

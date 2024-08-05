@@ -1,6 +1,23 @@
-import LinkCopyImg from '@/assets/link-copy.svg'
-import styles from '@/styles/components/Img.module.css'
+import styles from '@/styles/components/LinkCopy.module.css'
+import { IoLinkSharp } from 'react-icons/io5'
+import { useLocation, useSearchParams } from 'react-router-dom'
 
 export default function LinkCopy() {
-  return <img className={styles.img} src={LinkCopyImg} />
+  const path = useLocation()
+  const [serchParams] = useSearchParams()
+
+  const handleCopyClick = () => {
+    const pathname = `${path.pathname}${path.search}`
+    navigator.clipboard.writeText(pathname)
+    alert('복사되었습니다')
+  }
+
+  return (
+    <div className={styles.copy} onClick={handleCopyClick}>
+      <IoLinkSharp className={styles.icon} />
+      <div
+        className={styles.text}
+      >{`${serchParams.get('group')}#${serchParams.get('tag')}`}</div>
+    </div>
+  )
 }

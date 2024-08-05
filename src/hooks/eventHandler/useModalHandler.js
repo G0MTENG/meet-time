@@ -42,9 +42,20 @@ export default function useModalHandler(boxRef, closeModal) {
   }
 
   // Touch Events
-  const handleTouchStart = e => handleDragStart(e.touches[0].clientY)
-  const handleTouchMove = e => handleDragMove(e.touches[0].clientY)
-  const handleTouchEnd = () => handleDragEnd()
+  const handleTouchStart = e => {
+    e.preventDefault()
+    handleDragStart(e.touches[0].clientY)
+  }
+
+  const handleTouchMove = e => {
+    e.preventDefault()
+    handleDragMove(e.touches[0].clientY)
+  }
+
+  const handleTouchEnd = e => {
+    e.preventDefault()
+    handleDragEnd()
+  }
 
   // Mouse Events
   const handleMouseDown = e => handleDragStart(e.clientY)
