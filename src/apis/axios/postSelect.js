@@ -6,7 +6,7 @@ export const postSelect = async ({
   meetingDayId,
   possibleList,
 }) => {
-  const response = await api.post(`/select/${meetingId}/${userId}`, {
+  const response = await api.post(`select/${meetingId}/${userId}`, {
     meeting_id: meetingId,
     meeting_day_id: meetingDayId,
     user_id: userId,

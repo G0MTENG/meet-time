@@ -6,7 +6,7 @@ export const getResultPossible = async ({
   possibleId,
 }) => {
   const response = await api.get(
-    `/show/${meetingId}/${meetingDayId}/${possibleId}`,
+    `show/${meetingId}/${meetingDayId}/${possibleId}`,
   )
 
   return response.data

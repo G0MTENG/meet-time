@@ -7,7 +7,7 @@ const postCreateWeek = async ({
   meetingStartTime,
   meetingEndTime,
 }) => {
-  const response = await api.post('/week/create', {
+  const response = await api.post('week/create', {
     meeting_title: meetingTitle,
     meeting_type: meetingType,
     meeting_list: meetingList,
