@@ -7,6 +7,9 @@
 .logoBox {
   width: 50%;
   max-width: 180px;
+  align-items: center;
+  gap: 20px;
+  display: flex;
 }
 
 .link {

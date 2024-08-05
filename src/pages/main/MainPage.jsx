@@ -5,9 +5,9 @@ import Modal from '@/components/Modal'
 import { useStoreResultInStore } from '@/hooks/api/useStoreResultInStore'
 import MainLayout from '@/layout/MainLayout'
 import ResultBox from '@/pages/main/components/ResultBox'
-
+import { useLoginStore } from '@/stores/loginStore'
 import { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 export default function MainPage() {
   const [isModal, setIsModal] = useState(false)
@@ -19,6 +19,22 @@ export default function MainPage() {
   const [possible, setPossible] = useState(null)
   const [meetingDayIdState, setMeetingDayIdState] = useState(0)
   const [possibleIdState, setPossibleIdState] = useState(0)
+  const {
+    isLogin,
+    meetingId: loginMeetingId,
+    meetingTitle: loginMeetingTitle,
+  } = useLoginStore()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const [_group, _tag] = [searchParams.get('group'), searchParams.get('tag')]
+    console.log(_group, _tag, isLogin, loginMeetingId, loginMeetingTitle)
+    if (!isLogin || loginMeetingId !== _tag || loginMeetingTitle !== _group) {
+      if (confirm('로그인을 하지 않으셨습니다. 로그인하러 갈까요?')) {
+        navigate(`/login?group=${_group}&tag=${_tag}`)
+      }
+    }
+  }, [])
 
   useEffect(() => {
     storeData(data)

@@ -7,18 +7,18 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('/sw.js')
-      .then(registration => {
-        console.log('Service Worker registered with scope:', registration.scope)
-      })
-      .catch(error => {
-        console.log('Service Worker registration failed:', error)
-      })
-  })
-}
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', () => {
+//     navigator.serviceWorker
+//       .register('/sw.js')
+//       .then(registration => {
+//         console.log('Service Worker registered with scope:', registration.scope)
+//       })
+//       .catch(error => {
+//         console.log('Service Worker registration failed:', error)
+//       })
+//   })
+// }
 
 async function enableMocking() {
   if (import.meta.env.VITE_APP_ENV !== 'development') {
