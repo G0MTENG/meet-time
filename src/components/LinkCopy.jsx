@@ -8,7 +8,7 @@ export default function LinkCopy() {
 
   const handleCopyClick = () => {
     const pathname = `${path.pathname}${path.search}`
-    navigator.clipboard.writeText(pathname)
+    navigator.clipboard.writeText(`https://meet-time-rho.vercel.app${pathname}`)
     alert('복사되었습니다')
   }
 
