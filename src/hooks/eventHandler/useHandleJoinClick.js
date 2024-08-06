@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { getJoin } from '@/apis/axios/getJoin'
+import { postJoin } from '@/apis/axios/postJoin'
 import { useGroupJoinDataStore } from '../api/useGroupJoinDataStore'
 
 export const useHandleJoinClick = () => {
@@ -19,7 +19,7 @@ export const useHandleJoinClick = () => {
     }
 
     try {
-      const res = await getJoin(_groupName, _tag)
+      const res = await postJoin(_groupName, _tag)
       storeRequest(res)
       navigate(`/login?group=${_groupName}&tag=${_tag}`)
     } catch (e) {
