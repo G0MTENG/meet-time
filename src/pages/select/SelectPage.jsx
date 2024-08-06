@@ -14,12 +14,20 @@ export default function SelectPage() {
   const [listState, setListState] = useState(null)
   const [possible, setPossible] = useState([])
   const [index, setIndex] = useState(0)
+  const [keys, setKeys] = useState(null)
 
   useEffect(() => {
     if (!isPending && data) {
       setListState(data.possible_list)
+      setKeys(Object.keys(data.possible_list).map(ele => +ele))
     }
   }, [data, isPending])
+
+  useEffect(() => {
+    if (listState) {
+      setPossible(listState[keys[index]] || [])
+    }
+  }, [listState, keys, index])
 
   const handleButtonClick = () => {
     const updatedList = { ...listState }
@@ -45,7 +53,7 @@ export default function SelectPage() {
       <TimeSelectDate
         listState={listState}
         setListState={setListState}
-        keys={Object.keys(data?.possible_list).map(ele => +ele)}
+        keys={keys}
         start={meetingStartTime}
         end={meetingEndTime}
         possible={possible}
