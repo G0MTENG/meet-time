@@ -44,7 +44,7 @@ export default function SelectPage() {
     })
   }
 
-  if (isPending) {
+  if (isPending || !data) {
     return <div>잠시만 기다려주세요</div>
   }
 
