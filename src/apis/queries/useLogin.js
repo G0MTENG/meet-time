@@ -19,8 +19,8 @@ export const useLogin = () => {
       setUserId(data?.user_id)
       console.log('로그인 성공')
       setLogin()
-      loginSetMeetingId(meetingId)
-      loginSetMeetingTitle(meetingTitle)
+      loginSetMeetingId(data?.meeting_id)
+      loginSetMeetingTitle(data?.meeting_title)
       navigate(`/select?group=${meetingTitle}&tag=${meetingId}`)
     },
     onError: () => {
