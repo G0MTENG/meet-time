@@ -1,8 +1,15 @@
-# React + Vite
+### Meettime
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### FrontEnd
+- 공태윤
+- 김현수
+#### BackEnd
+- 정다영
+- 임소미
+- 강평종
 
-Currently, two official plugins are available:
+#### 소개
+Meettime는 바쁜 현대인을 위해 간편하게 운동 일정을 조율할 수 있는 웹/앱 서비스입니다. 친구나 동아리 등 다양한 사람들과 일정 조율을 쉽게 하세요!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### 프로젝트의 비전
+- 함께하는 즐거움, 간편하게 시작하기
