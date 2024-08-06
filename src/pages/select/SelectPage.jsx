@@ -20,6 +20,13 @@ export default function SelectPage() {
   }, [data, isPending])
 
   const handleButtonClick = () => {
+    console.log(
+      meetingStartTime,
+      meetingEndTime,
+      meetingId,
+      userId,
+      meetingDayId,
+    )
     mutate({
       meetingId,
       userId,
