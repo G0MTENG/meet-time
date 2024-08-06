@@ -10,7 +10,6 @@ const useCreateWeek = () => {
     mutationFn: data => postCreateWeek(data),
     onSuccess: data => {
       storeRequest(data)
-      console.log('생성 성공:', data)
       navigate(`/login?group=${data?.meeting_title}&tag=${data?.meeting_id}`, {
         replace: true,
       })

@@ -7,7 +7,6 @@ export default function RowLabelWeek({ weeks }) {
   weeks.forEach(ele => {
     weekLabel.push(weekly[ele])
   })
-  console.log(weekLabel)
 
   return (
     <ul className={styles.container}>

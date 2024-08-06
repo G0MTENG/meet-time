@@ -17,7 +17,6 @@ export const useLogin = () => {
     mutationFn: data => postLogin(data),
     onSuccess: data => {
       setUserId(data?.user_id)
-      console.log(meetingTitle, meetingId)
       console.log('로그인 성공')
       setLogin()
       loginSetMeetingId(meetingId)

@@ -30,7 +30,6 @@ export default function MainPage() {
         meetingDayId,
         possibleId,
       })
-      console.log(modalData)
       setPossible(modalData?.possible_people)
       setMeetingDayIdState(meetingDayId)
       setPossibleIdState(possibleId)
