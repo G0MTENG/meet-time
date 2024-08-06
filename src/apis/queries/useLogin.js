@@ -7,20 +7,16 @@ import { useLoginStore } from '@/stores/loginStore'
 export const useLogin = () => {
   const navigate = useNavigate()
   const { setUserId, meetingTitle, meetingId } = useGroupPersistStore()
-  const {
-    setLogin,
-    setMeetingId: loginSetMeetingId,
-    setMeetingTitle: loginSetMeetingTitle,
-  } = useLoginStore()
+  const { setLogin, setMeetingId: loginSetMeetingId } = useLoginStore()
 
   return useMutation({
     mutationFn: data => postLogin(data),
     onSuccess: data => {
       setUserId(data?.user_id)
       console.log('로그인 성공')
+      console.log(data?.meeting_id, data?.meeting_title)
       setLogin()
       loginSetMeetingId(data?.meeting_id)
-      loginSetMeetingTitle(data?.meeting_title)
       navigate(`/select?group=${meetingTitle}&tag=${meetingId}`)
     },
     onError: () => {

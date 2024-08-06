@@ -15,8 +15,8 @@ export const useLoginStore = create(
       setLogin: () => set({ isLogin: true }),
       meetingId: 0,
       setMeetingId: id => set({ meetingId: id }),
-      meetingTitle: '',
-      setMeetingTitle: title => set({ meetingTitle: title }),
+      nickname: '',
+      setNickname: name => set({ nickname: name }),
     }),
     {
       name: 'login',

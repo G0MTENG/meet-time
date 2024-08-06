@@ -18,7 +18,7 @@ export default function SelectInfo({ label, rowNum, colNum, handleModalOpen }) {
                 handleModalOpen(meetingDayId[rowIdx], label[colIdx].id)
               }
               style={{
-                backgroundColor: `rgba(0, 0, 0, ${colorList[possibleList[meetingDayId[rowIdx]][colIdx]]})`,
+                backgroundColor: `rgba(0, 0, 0, ${colorList[possibleList[meetingDayId[rowIdx]][colIdx]] / 100})`,
               }}
             />
           ))}

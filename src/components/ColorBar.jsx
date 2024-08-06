@@ -5,12 +5,11 @@ import { useEffect } from 'react'
 
 export default function ColorBar({ numOfGroupPeople = 1 }) {
   const { colorList, setColorList } = useColorStore()
-  const unit = 100 / numOfGroupPeople
+  const unit = 100 / (numOfGroupPeople + 1) // 각 구간의 크기
 
   useEffect(() => {
-    const colors = Array.from(
-      { length: numOfGroupPeople },
-      (_, idx) => (unit * (idx + 1)) / 100,
+    const colors = Array.from({ length: numOfGroupPeople + 1 }, (_, idx) =>
+      Math.round(unit * (idx + 1)),
     )
     setColorList(colors)
   }, [numOfGroupPeople])
