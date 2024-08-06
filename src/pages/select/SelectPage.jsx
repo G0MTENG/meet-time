@@ -26,6 +26,7 @@ export default function SelectPage() {
       meetingId,
       userId,
       meetingDayId,
+      listState,
     )
     mutate({
       meetingId,
