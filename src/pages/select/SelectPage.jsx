@@ -13,6 +13,8 @@ export default function SelectPage() {
   const { isPending: postPending, mutate } = useUpdateSelectTime()
   const [listState, setListState] = useState(data?.possible_list)
 
+  console.log(listState)
+
   useEffect(() => {
     if (!isPending && data) {
       setListState(data.possible_list)
