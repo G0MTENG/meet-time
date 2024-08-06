@@ -12,6 +12,8 @@ export default function SelectPage() {
   const { data, isPending } = useGetSelect({ meetingId, userId })
   const { isPending: postPending, mutate } = useUpdateSelectTime()
   const [listState, setListState] = useState(null)
+  const [possible, setPossible] = useState([])
+  const [index, setIndex] = useState(0)
 
   useEffect(() => {
     if (!isPending && data) {
@@ -20,14 +22,12 @@ export default function SelectPage() {
   }, [data, isPending])
 
   const handleButtonClick = () => {
-    console.log(
-      meetingStartTime,
-      meetingEndTime,
-      meetingId,
-      userId,
-      meetingDayId,
-      listState,
-    )
+    const updatedList = { ...listState }
+    updatedList[Object.keys(data?.possible_list).map(ele => +ele)[index]] =
+      possible
+    console.log(updatedList)
+    setListState(updatedList)
+
     mutate({
       meetingId,
       userId,
@@ -48,6 +48,10 @@ export default function SelectPage() {
         keys={Object.keys(data?.possible_list).map(ele => +ele)}
         start={meetingStartTime}
         end={meetingEndTime}
+        possible={possible}
+        setPossible={setPossible}
+        index={index}
+        setIndex={setIndex}
       />
       {postPending ? (
         <Button>대기 중...</Button>

@@ -1,7 +1,7 @@
 import { useGroupPersistStore } from '@/stores/groupPersistStore'
 import styles from '@/styles/select/TimeSelectDate.module.css'
 import { createTimeLabels } from '@/utils/createTimeLabel'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import DateSelector from './DateSelector'
 import TimeSelector from './TimeSelector'
 import WeekSelector from './WeekSelector'
@@ -13,11 +13,13 @@ export default function TimeSelectDate({
   keys,
   start,
   end,
+  possible,
+  setPossible,
+  index,
+  setIndex,
 }) {
   const timeLabels = createTimeLabels(start, end)
-  const [index, setIndex] = useState(0)
   const { meetingList, meetingType } = useGroupPersistStore()
-  const [possible, setPossible] = useState([])
 
   useEffect(() => {
     if (listState) {
