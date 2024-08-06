@@ -29,6 +29,7 @@ export default function TimeSelectDate({
     if (idx !== index) {
       const updatedList = { ...listState }
       updatedList[keys[index]] = possible
+      console.log(updatedList)
       setListState(updatedList)
       setIndex(idx)
     }

@@ -11,9 +11,7 @@ export default function SelectPage() {
     useGroupPersistStore()
   const { data, isPending } = useGetSelect({ meetingId, userId })
   const { isPending: postPending, mutate } = useUpdateSelectTime()
-  const [listState, setListState] = useState(data?.possible_list)
-
-  console.log(listState)
+  const [listState, setListState] = useState(null)
 
   useEffect(() => {
     if (!isPending && data) {
