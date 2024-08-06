@@ -24,27 +24,30 @@ export default function SelectPage() {
   }, [data, isPending])
 
   useEffect(() => {
-    if (listState) {
+    if (listState && keys) {
       setPossible(listState[keys[index]] || [])
     }
   }, [listState, keys, index])
 
   const handleButtonClick = () => {
     const updatedList = { ...listState }
-    updatedList[Object.keys(data?.possible_list).map(ele => +ele)[index]] =
-      possible
-    console.log(updatedList)
+    updatedList[keys[index]] = possible
     setListState(updatedList)
 
+    // 상태 업데이트 후 mutate 함수 호출
+    mutateData(updatedList)
+  }
+
+  const mutateData = updatedList => {
     mutate({
       meetingId,
       userId,
       meetingDayId,
-      possibleList: listState,
+      possibleList: updatedList,
     })
   }
 
-  if (isPending || !data) {
+  if (isPending || !keys) {
     return <div>잠시만 기다려주세요</div>
   }
 

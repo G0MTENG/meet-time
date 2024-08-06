@@ -5,6 +5,7 @@ import { timeLabel } from '@/utils/timeOptions'
 import useModalHandler from '@/hooks/eventHandler/useModalHandler'
 import { useRef } from 'react'
 import { weekly } from '@/utils/dateHelper'
+import { GROUPTYPE } from '@/utils/groupType'
 
 export default function Modal({
   closeModal,
@@ -17,6 +18,7 @@ export default function Modal({
     allPeople,
     meetingDayId: meetingDayIds,
     meetingList,
+    meetingType,
   } = useResultStore()
   useModalHandler(boxRef, closeModal)
 
@@ -32,7 +34,7 @@ export default function Modal({
           <div className={styles.imgWrapper}>
             <BasicLogo />
           </div>
-          <div>{week}요일</div>
+          {meetingType === GROUPTYPE.WEEK ? <div>{week}요일</div> : undefined}
           <div>
             {timeLabel[timeIdx].label} ~ {timeLabel[timeIdx + 1].label}
           </div>
