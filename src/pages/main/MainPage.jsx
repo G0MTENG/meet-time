@@ -12,7 +12,7 @@ export default function MainPage() {
   const [isModal, setIsModal] = useState(false)
   const [searchParams] = useSearchParams()
   const { data, isPending } = useGetResult({
-    meetingId: searchParams.get('group'),
+    meetingId: searchParams.get('tag'),
   })
   const storeData = useStoreResultInStore()
   const [possible, setPossible] = useState(null)
